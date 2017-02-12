@@ -31,7 +31,7 @@
                             </div>
                             <div class="col-md-4 col-md-pull-8">
                                 <div class="carousel-caption">
-                                    <h2>Network Computing Lab</h2>
+                                    <h2>Intelligent Systems Research Institute</h2>
                                     <ul>
                                         <li>Lorem ipsum Nostrud ad nulla est in</li>
                                         <li>Lorem ad nulla est in...</li>
@@ -47,28 +47,46 @@
                     </article>
                     <article class="item">
                         <div class="row">
-                            <div class="col-md-6 col-md-push-6">
-                                <img src="/assets/img/Big-Data1.jpg" class="img-responsive hidden-xs hidden-sm" alt="Image">
+                            <div class="col-md-8 col-md-push-4">
+                                <div class="video hidden-xs hidden-sm">
+                                    <iframe src="http://player.vimeo.com/video/203680587?title=0&amp;byline=0&amp;portrait=0&amp;"></iframe>
+                                </div>
                             </div>
-                            <div class="col-md-6 col-md-pull-6">
+                            <div class="col-md-4 col-md-pull-8">
                                 <div class="carousel-caption">
-                                    <h2>Lorem ipsum Nostrud ad nulla est</h2>
-                                    <p>Lorem ipsum Nostrud ad nulla est in consequat ad magna reprehenderit minim minim irure aute commodo aliquip laborum ad sint Ut dolor et in do cupidatat veniam laborum dolor elit in ullamco eu ad Ut in.</p>
-                                    <p>Mollit sed Duis proident reprehenderit dolore velit fugiat consequat dolore aliqua magna sed officia ullamco incididunt est Excepteur sit Ut ut anim adipisicing anim eu esse nulla in magna mollit sunt ut proident aliqua fugiat adipisicing commodo labore labore fugiat et Excepteur velit irure elit fugiat aliqua anim elit pariatur proident id.</p>
+                                    <h2>Intelligent Systems Research Institute</h2>
+                                    <ul>
+                                        <li>Lorem ipsum Nostrud ad nulla est in</li>
+                                        <li>Lorem ad nulla est in...</li>
+                                        <li>Lorem ad nulla est inLorem ad nulla est in.</li>
+                                        <li>Lorem ad</li>
+                                        <li>nulla est in</li>
+                                    </ul> 
+                                    <a href="#" class="btn btn-robotic-inverse">Publications</a>
+                                    <a href="#" class="btn btn-robotic-inverse">Contact</a>
                                 </div>
                             </div>
                         </div>
                     </article>
                     <article class="item">
                         <div class="row">
-                            <div class="col-md-6">
-                                <img src="/assets/img/5.png" class="img-responsive hidden-xs hidden-sm" alt="Image">
+                            <div class="col-md-8 col-md-push-4">
+                                <div class="video hidden-xs hidden-sm">
+                                    <iframe src="http://player.vimeo.com/video/203680893?title=0&amp;byline=0&amp;portrait=0&amp;"></iframe>
+                                </div>
                             </div>
-                            <div class="col-md-6">
+                            <div class="col-md-4 col-md-pull-8">
                                 <div class="carousel-caption">
-                                    <h2>Reprehenderit minim minim irure aute commodo aliquip</h2>
-                                    <p>Lorem ipsum Nostrud ad nulla est in consequat ad magna reprehenderit minim minim irure aute commodo aliquip laborum ad sint Ut dolor et in do cupidatat veniam laborum dolor elit in ullamco eu ad Ut in.</p>
-                                    <p>Lorem ipsum Velit ex ullamco in et labore Excepteur pariatur esse velit nisi fugiat amet cillum consectetur magna sunt do nulla nostrud quis ex do aliquip enim minim.</p>
+                                    <h2>Intelligent Systems Research Institute</h2>
+                                    <ul>
+                                        <li>Lorem ipsum Nostrud ad nulla est in</li>
+                                        <li>Lorem ad nulla est in...</li>
+                                        <li>Lorem ad nulla est inLorem ad nulla est in.</li>
+                                        <li>Lorem ad</li>
+                                        <li>nulla est in</li>
+                                    </ul> 
+                                    <a href="#" class="btn btn-robotic-inverse">Publications</a>
+                                    <a href="#" class="btn btn-robotic-inverse">Contact</a>
                                 </div>
                             </div>
                         </div>
@@ -85,44 +103,44 @@
         <section class="home-features">
             <div class="row">
                 <style type="text/css">
-                  .ph{
+/*                  .ph{
                     height: 150px !important;
                     overflow: hidden;
                   }
                   .h2h{
                     height: 100px !important;
                     overflow: hidden;
-                  }
+                  }*/
                 </style>
                 <div class="col-md-3 col-sm-6">
                     <article class="home-features-item">
                         <i class="icon-globe"></i>
-                        <h2 class="h2h">Big Data</h2>
-                        <p class="ph">Open Source Components 기술 기반으로 다양한 타입의 데이터를 실시간으로 분석 처리가 가능한 대용량 분석용 플랫폼.</p>
+                        <h2 class="h2h">LOREM IPSUM</h2>
+                        <p class="ph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <a class="btn btn-default">Read More</a>
                     </article>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <article class="home-features-item">
                         <i class="icon-html5"></i>
-                        <h2 class="h2h">VANET</h2>
-                        <p class="ph">Vehicle Adhoc Networks. 차량 네트워크를 이용한 개발, VANETs 서비스 및 분석 플랫폼.</p>
+                        <h2 class="h2h">LOREM IPSUM</h2>
+                        <p class="ph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <a class="btn btn-default">Read More</a>
                     </article>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <article class="home-features-item">
                         <i class="icon-beaker"></i>
-                        <h2 class="h2h">Laboris quis aliqua</h2>
-                        <p class="ph">Open Source Components 기술 기반으로 다양한 타입의 데이터를 실시간으로 분석 처리가 가능한 대용량 분석용 플랫폼.</p>
+                        <h2 class="h2h">LOREM IPSUM</h2>
+                        <p class="ph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <a class="btn btn-default">Read More</a>
                     </article>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <article class="home-features-item">
                         <i class="icon-group"></i>
-                        <h2 class="h2h">Software Defined Networking</h2>
-                        <p class="ph">기존 Networks 장비에서 H/W 기능과 S/W 기능을 분리하여, 모든 Networks 장비를 지능화된 중앙 관리 시스템에 의해 관리하는 Networks 솔루션.</p>
+                        <h2 class="h2h">LOREM IPSUM</h2>
+                        <p class="ph">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                         <a class="btn btn-default">Read More</a>
                     </article>
                 </div>
@@ -140,17 +158,17 @@
                     <div class="row">
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="caption cs-style-3">
-                                <img src="/assets/img/b1.jpg" alt="img04">
+                                <img src="/assets/img/med1.jpg" alt="img04">
                                 <figcaption>
                                     <h3>BigData</h3>
-                                    <span>NCLAB</span>
+                                    <span>ISRI</span>
                                     <a class="btn btn-robotic-inverse" href="#">Take a look</a>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="caption cs-style-3">
-                                <img src="/assets/img/b2.jpg" alt="img01">
+                                <img src="/assets/img/med2.jpg" alt="img01">
                                 <figcaption>
                                     <h3>Vanet</h3>
                                     <span>Jacob Cummings</span>
@@ -160,20 +178,20 @@
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="caption cs-style-3">
-                                <img src="/assets/img/b3.jpg" alt="img02">
+                                <img src="/assets/img/med3.jpg" alt="img02">
                                 <figcaption>
                                     <h3>SDN</h3>
-                                    <span>NCLAB</span>
+                                    <span>ISRI</span>
                                     <a class="btn btn-robotic-inverse" href="#">Take a look</a>
                                 </figcaption>
                             </figure>
                         </div>
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <figure class="caption cs-style-3">
-                                <img src="/assets/img/b4.png" alt="img02">
+                                <img src="/assets/img/med4.png" alt="img02">
                                 <figcaption>
                                     <h3>SDN</h3>
-                                    <span>NCLAB</span>
+                                    <span>ISRI</span>
                                     <a class="btn btn-robotic-inverse" href="#">Take a look</a>
                                 </figcaption>
                             </figure>
@@ -194,10 +212,10 @@
                     <div class="col-md-4">
                         <div class="team-home-item">
                             <div class="team-home-img">
-                                <img src="/assets/img/pe1.jpg" alt="">
+                                <img src="/assets/img/pip1.png" alt="">
                             </div>
                             <div class="team-home-content">
-                                <h3>Dong-Ryeol Shin - Professor</h3>
+                                <h3>Sukhan Lee - Professor and Director</h3>
                                 <p>Lorem ipsum Culpa qui eu dolore non culpa pariatur mollit qui sint occaecat nisi ea consequat occaecat dolor nisi nostrud dolor consectetur occaecat.</p>
                                 <p>Eiusmod laboris aliqua velit amet nostrud in magna reprehenderit Excepteur tempor amet reprehenderit voluptate proident consectetur elit.</p>
                             </div>
@@ -209,10 +227,10 @@
                     <div class="col-md-4">
                         <div class="team-home-item">
                             <div class="team-home-img">
-                                <img src="/assets/img/pe2.jpg" alt="">
+                                <img src="/assets/img/pip2.jpg" alt="">
                             </div>
                             <div class="team-home-content">
-                                <h3>Mark Rymond - CEO</h3>
+                                <h3>Pariatur Mollit - Postdoctoral</h3>
                                 <p>Lorem ipsum Culpa qui eu dolore non culpa pariatur mollit qui sint occaecat nisi ea consequat occaecat dolor nisi nostrud dolor consectetur occaecat.</p>
                                 <p>Eiusmod laboris aliqua velit amet nostrud in magna reprehenderit Excepteur tempor amet reprehenderit voluptate proident consectetur elit.</p>
                             </div>
@@ -224,10 +242,10 @@
                     <div class="col-md-4">
                         <div class="team-home-item">
                             <div class="team-home-img">
-                                <img src="/assets/img/pex.png" alt="">
+                                <img src="/assets/img/pip3.jpg" alt="">
                             </div>
                             <div class="team-home-content">
-                                <h3>Mark Rymond - CEO</h3>
+                                <h3>Pariatur Mollit - Postdoctoral</h3>
                                 <p>Lorem ipsum Culpa qui eu dolore non culpa pariatur mollit qui sint occaecat nisi ea consequat occaecat dolor nisi nostrud dolor consectetur occaecat.</p>
                                 <p>Eiusmod laboris aliqua velit amet nostrud in magna reprehenderit Excepteur tempor amet reprehenderit voluptate proident consectetur elit.</p>
                             </div>
@@ -272,21 +290,21 @@
         <div class="row">
             <div class="col-md-4">
                 <div class="home-post-item"> 
-                    <a href="#"><img src="/assets/img/b1.jpg" class="img-responsive" alt="Image"></a>
+                    <a href="#"><img src="/assets/img/med1.jpg" class="img-responsive" alt="Image"></a>
                     <h3><a href="#">Lorem ipsum Mollit culpa qui cillum</a></h3>
                     <p>Lorem ipsum Mollit culpa qui cillum do sunt exercitation in minim reprehenderit veniam ex quis Excepteur nostrudin reprehenderit nisi nisi non elit sed velit reprehenderit nisi nisi non elit.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="home-post-item">
-                    <a href="#"><img src="/assets/img/b2.jpg" class="img-responsive" alt="Image"></a>
+                    <a href="#"><img src="/assets/img/med3.jpg" class="img-responsive" alt="Image"></a>
                     <h3><a href="#">Lorem ipsum Mollit culpa qui cillum</a></h3>
                     <p>Lorem ipsum Mollit culpa qui cillum do sunt exercitation in minim reprehenderit veniam ex quis Excepteur nostrudin reprehenderit nisi nisi non elit sed velit.</p>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="home-post-item">
-                    <a href="#"><img src="/assets/img/b3.jpg" class="img-responsive" alt="Image"></a>
+                    <a href="#"><img src="/assets/img/med4.png" class="img-responsive" alt="Image"></a>
                     <h3><a href="#">Lorem ipsum Mollit culpa qui cillum</a></h3>
                     <p>Lorem ipsum Mollit culpa qui cillum do sunt exercitation in minim reprehenderit veniam ex quis Excepteur nostrudin reprehenderit nisi nisi non elit sed velit magna incididunt.</p>
                 </div>

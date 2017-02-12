@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>NCLab</title>
+    <title>ISRI</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico">
@@ -28,7 +28,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Network <span>Lab</span></a>
+                <a class="navbar-brand" href="index.html">ISRI</a>
             </header> <!-- navbar-header -->
 
             <div class="navbar-collapse collapse">
@@ -119,13 +119,14 @@
             </div>
             <div class="col-md-4">
                 <section class="footer-widget">
-                    <h3 class="logo"><span>NC</span> Lab</h3>
+                    <h3 class="logo"><span>ISR</span>I</h3>
                     <address>
-                        서부로 2066 제2공학관 26313B<br>
-                        경기도 수원시 장안구<br>
-                        Phone: +82-31-290-7232 <br>
-                        Fax: - <br>
-                        Email: <a href="mailto:namgun99@gmail.com">namgun99@gmail.com</a>
+                        Sungkyunkwan University,<br>
+                        300 Cheoncheon-dong, jangan-gu,<br>
+                         Suwon, Gyeonggi-do, 440-746, Korea<br>
+                        Phone: +82-31-299-6471 <br>
+                        Fax: - +82-31-299-6479 <br>
+                        Email: <a href="mailto:navvis@skku.edu">navvis@skku.edu</a>
                     </address>
                     <div class="footer-social">
                         <h3>Social media</h3>
@@ -143,7 +144,7 @@
 
     <footer id="footer">
         <div class="container">
-            <p>&copy; 2017 <a href="#">NCLab(WebPrinciples)</a> All rights reserved.</p>
+            <p>&copy; 2017 <a href="#">ISRI(WebPrinciples)</a> All rights reserved.</p>
         </div>
     </footer>
 

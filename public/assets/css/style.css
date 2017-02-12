@@ -680,7 +680,7 @@ ul.navbar-nav-robotic > li.dropdown-menu {
 
 #carousel-home .item {
     margin-bottom: 20px;
-    height: 360px !important;
+    /*height: 360px !important;*/
     overflow: hidden;
 }
 
