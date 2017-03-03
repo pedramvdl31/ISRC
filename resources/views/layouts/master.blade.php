@@ -30,7 +30,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a class="navbar-brand page-scroll" href="#main"><img src="/assets/logos/logo.png" width="80" height="30" alt="Lorem" /></a>
+              <a class="navbar-brand page-scroll" href="#main"><img src="/assets/logos/logxo.png" width="80" height="30" alt="Lorem" /></a>
               </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
@@ -183,6 +183,40 @@
           </div>
         </div>
 
+        <style type="text/css">
+            input[type="text"]:focus, textarea:focus, textarea.form-control:focus {
+                outline: 0;
+                background: #FFFFFF;
+                border: none !important;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+            input[type="email"]:focus, textarea:focus, textarea.form-control:focus {
+                outline: 0;
+                background: #FFFFFF;
+                border: none !important;
+                -moz-box-shadow: none;
+                -webkit-box-shadow: none;
+                box-shadow: none;
+            }
+            .subscribe-form .name {
+                margin-bottom: 3px;
+                background-color: #F9F9F9;
+                border: none;
+                border-radius: 5px;
+                outline: none;
+                height: 40px;
+                box-shadow: none;
+                -webkit-box-sizing: content-box;
+                -moz-box-sizing: content-box;
+                box-sizing: content-box;
+                transition: all .3s;
+            }
+            .form .subscribe-form .submit-button2 {
+                border-radius: 5px !important;
+            }
+        </style>
 
       <div id="purchase" class="pricing">
         <div class="container">
@@ -193,12 +227,14 @@
                 <h4 class="wow fadeInUp" data-wow-delay="0.2s">Sed ut perspiciatis unde omnis</h4>
                 <div class="form wow fadeInUp" data-wow-delay="0.3s">
                     <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                      <input class="mail" type="text" name="name" placeholder="Name" autocomplete="off">
-                      <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off">
-                      <input class="mail" type="text" name="phone" placeholder="Phone Number" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="Name" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="email" name="email" placeholder="Email" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="phone" placeholder="Phone Number" autocomplete="off">
 
-                      <input class="submit-button" type="submit" value="Subscribe">
+                      <input class="submit-button submit-button2" type="submit" value="Purchace Request">
                     </form>
+                    <div class="success-message"></div>
+                    <div class="error-message"></div>
                 </div>
                 <div class="btn-buy">
                   <a href="#"><img class="img-responsive wow fadeIn" data-wow-delay="0.4s" src="/assets/logos/amazon_logo.png" width="200" alt="Buy" /></a>
@@ -229,7 +265,7 @@
               <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off"><input class="submit-button" type="submit" value="Subscribe">
             </form>
             <div class="success-message"></div>
-                  <div class="error-message"></div>
+            <div class="error-message"></div>
           </div>
         </div>
       </div>
