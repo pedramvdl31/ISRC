@@ -73,97 +73,77 @@ class HomeController extends Controller
         ->with('layout','layouts.master');
     }
 
-    public function getEvents()
-    {
-        $events = Event::PrepareEventsForEventPage();
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.events')
-        ->with('layout',$layout_title)
-        ->with('not_ind',1)
-        ->with('events',$events);
-    }
-    public function getEventsInd($id)
-    {
-        if (isset($id)) {
-            $this_e = Event::find($id);
-            if (isset($this_e)) {
-                $events = Event::PrepareEventsForEventPageInd($this_e);
-                $layout_title = 'layouts.customize_layout';
-                return view('pages.website_pages.events')
-                ->with('layout',$layout_title)
-                ->with('ind',1)
-                ->with('event',$events);
-            }
-        }
-    }
-
-    public function getCalendar()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.calendar')
-        ->with('layout',$layout_title);
-    }
-    public function getScheduling()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.scheduling')
-        ->with('layout',$layout_title);
-    }
-
-    public function getVideos()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.videos')
-        ->with('layout',$layout_title);
-    }
-
-    public function getDonate()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.donation')
-        ->with('layout',$layout_title);
-    }
 
 
 
-    public function getPapers()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.papers')
-        ->with('layout',$layout_title);
-    }
 
-    public function getMembersTestimonials()
-    {
-        $layout_title = 'layouts.customize_layout';
-        return view('pages.website_pages.members_testimonials')
-        ->with('layout',$layout_title);
-    }
-
-
-        public function postSendEmail()
+        public function postPurchaceRequest()
     {
         if(Request::ajax()){
-            $status = 400;
-            $email = Input::get('email');
-            $message_text = Input::get('message');
 
-            if (Mail::send('emails.send_message', array(
-                        'email' => $email,
-                        'message_text' => $message_text
-                    ), function($message) use ($email,$message_text)
-                    {
-                        $message->from('postmaster@webprinciples.com');
-                        $message->to('pedramkhoshnevis666@yahoo.com');
-                        $message->subject('Message from Your Website!');
-                    })) {
+            $flag = 0;
+            $status = 400;
+            $err = '';
+            $suc = 'Thank you for contacting us - we will get back to you soon!';
+            $pform = null;
+            parse_str(Input::get('pform'), $pform);
+            $name = $pform['name'];
+            $organization = $pform['organization'];
+            $email = $pform['email2'];
+            $phone = $pform['phone'];
+            $add_comment = $pform['add-comment'];
+
+
+            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
                 $status = 200;
+            } else {
+                $flag=1;
+                $err  = 'Not a valid email address!';
+                $status = 400;
+            }
+            if ($name!=""||!empty($name)) {
+                $status = 200;
+            } else {
+                $flag=1;
+                $err  = 'Please fill in required fields';
+                $status = 400;
+            }
+            if ($phone!=""||!empty($phone)) {
+                $status = 200;
+            } else {
+                $flag=1;
+                $err  = 'Please fill in required fields';
+                $status = 400;
+            }
+            if ($organization!=""||!empty($organization)) {
+                $status = 200;
+            } else {
+                $flag=1;
+                $err  = 'Please fill in required fields';
+                $status = 400;
+            }
+            if ($flag==1) {
+                $status = 400;
             }
 
-
+            if ($flag==0) {
+                if (Mail::send('emails.send_message', array(
+                            'email' => $email,
+                            'message_text' => 'sada'
+                        ), function($message) use ($email)
+                        {
+                            $message->from('postmaster@webprinciples.com');
+                            $message->to('pedramkhoshnevis@gmail.com');
+                            $message->subject('Message from Your Website!');
+                        })) {
+                    $status = 200;
+                }
+            }
 
             return Response::json(array(
-                'status' => $status
+                'status' => $status,
+                'err' => $err,
+                'suc' => $suc
                 ));
         }
     }

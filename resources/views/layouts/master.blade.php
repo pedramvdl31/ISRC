@@ -10,6 +10,8 @@
     <meta name="description" content="Lorem Multipurpose Landing Page Template">
     <meta name="keywords" content="Lorem HTML Template, Lorem Landing Page, Landing Page Template">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700%7CRoboto%7CJosefin+Sans:100,300,400,500" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/css/animate.css"> <!-- Resource style -->
     <link rel="stylesheet" href="/assets/css/owl.carousel.css">
@@ -30,14 +32,14 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-              <a class="navbar-brand page-scroll" href="#main"><img src="/assets/logos/logxo.png" width="80" height="30" alt="Lorem" /></a>
+              <a style="padding-top: 0;" class="navbar-brand page-scroll" href="#main"><img src="/assets/logos/ing-logo-sm.png" alt="Lorem" /></a>
               </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
               <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li><a class="page-scroll" href="#main">Product</a></li>
                     <li><a class="page-scroll" href="#features">Features</a></li>
-                    <li><a class="page-scroll" href="#review-section">Reviews</a></li>
+                    <li><a class="page-scroll" href="#videosec">Video</a></li>
                     <li><a class="page-scroll" href="#purchase">Purchase</a></li>
                     <li><a class="page-scroll" href="#contact">Contact</a></li>
                 </ul>
@@ -51,15 +53,55 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-              <img class="img-responsive wow fadeIn" src="/assets/images/hero.jpg" alt="Hero Image" />
+<!--               <img class="img-responsive wow fadeIn" src="/assets/images/hero1.jpg" alt="Hero Image" /> -->
+
+
+              <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#myCarousel" data-slide-to="1"></li>
+                  <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
+                  <div class="item active">
+                    <img src="/assets/images/hero1.jpg" alt="Scanned-model">
+                  </div>
+
+                  <div class="item">
+                    <img src="/assets/images/hero2.jpg" alt="Scanned-model">
+                  </div>
+
+                  <div class="item">
+                    <img src="/assets/images/hero3.jpg" alt="Alligator">
+                  </div>
+
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+                  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+                  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+
             </div>
             <div class="col-md-6">
               <div class="hero-content">
-                <h1 class="wow fadeInUp" data-wow-delay="0s">Lorem ipsum dolor sit amet, consectetur</h1>
+                <h1 class="wow fadeInUp" data-wow-delay="0s">Alligator 3D Camera</h1>
                 <p class="wow fadeInUp" data-wow-delay="0.2s">
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatu.
+                  Structured Light Based 3D Camera
+                  Light Weight, Compact, and Accurate 3D Camera
+                  For Service/Industrial Robots and Entertainment
                 </p>
-                <a class="btn btn-primary btn-action popup wow fadeInUp" data-wow-delay="0.2s" href="#">Know More</a>
+
+                <a class="btn btn-primary btn-action popup wow fadeInUp" data-wow-delay="0.2s" data-toggle="modal" data-target="#myModal">Know More</a>
               </div>
             </div>
           </div>
@@ -69,9 +111,9 @@
       <div class="about text-center">
         <div class="container">
           <div class="about-content">
-            <h2 class="wow fadeInUp" data-wow-delay="0.1s">"Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+            <h2 class="wow fadeInUp" data-wow-delay="0.1s">The structured light 3D camera use one projector and one camera to capture 3D points of the objects and scene. With the advantages of projecting patterns, this type of 3D camera can capture various surface properties, including nontextured surface where stereo camera cannot, and it is very accurate and robust. 
             </h2>
-            <h3 class="wow fadeInUp" data-wow-delay="0.2s">- The Verge</h3>
+            <h3 class="wow fadeInUp" data-wow-delay="0.2s">- INGVISION</h3>
           </div>
         </div>
       </div>
@@ -81,18 +123,72 @@
          <div class="features-inner">
            <div class="row">
              <div class="col-md-6">
-               <img class="img-responsive wow fadeIn" src="/assets/images/details.jpg" alt="Features" />
+              <table class="table table-condensed" style="text-align: center;">
+                <thead>
+                  <tr>
+                    <th style="text-align: center;" colspan="2">Alligator Specification</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Texture Capture</td>
+                    <td>Available</td>
+                  </tr>
+                  <tr>
+                    <td>2D Resolution</td>
+                    <td>640x480 Pixels</td>
+                  </tr>
+                  <tr>
+                    <td>3D Point Depth Accuracy</td>
+                    <td>0.3mm@1m</td>
+                  </tr>
+                  <tr>
+                    <td>Color Reconstruction</td>
+                    <td>Available</td>
+                  </tr>
+                  <tr>
+                    <td>Light Source</td>
+                    <td>LED, White Light</td>
+                  </tr>
+                  <tr>
+                    <td>Working Distance</td>
+                    <td>0.5 ~ 3 m</td>
+                  </tr>
+                  <tr>
+                    <td>Scan Area(at 1m)</td>
+                    <td>40 x 31 cm</td>
+                  </tr>
+                  <tr>
+                    <td>Field of View (FOV, at 1m)</td>
+                    <td>Vertical FOV : 17.5 , Horizontal FOV : 22.6 </td>
+                  </tr>
+                  <tr>
+                    <td>Frame Rate</td>
+                    <td>1 Hz</td>
+                  </tr>
+                  <tr>
+                    <td>Dimensions</td>
+                    <td>210 x 68 x 95 mm</td>
+                  </tr>
+                  <tr>
+                    <td>Weight</td>
+                    <td>0.7 kg</td>
+                  </tr>
+                  <tr>
+                    <td>Interface</td>
+                    <td>IEEE 1394b, VGA</td>
+                  </tr>
+                </tbody>
+              </table>  
              </div>
              <div class="col-md-6">
                <div class="features-list">
                  <h1 class="wow fadeInUp" data-wow-delay="0.1s">Features & Specifications</h1>
                  <ul class="wow fadeInUp" data-wow-delay="0.2s">
-                   <li>Sed ut perspiciatis unde omnis</li>
-                   <li>Sed ut perspiciatis unde omnis</li>
-                   <li>Sed ut perspiciatis unde omnis</li>
-                   <li>Sed ut perspiciatis unde omnis</li>
-                   <li>Sed ut perspiciatis unde omnis</li>
-                   <li>Sed ut perspiciatis unde omnis</li>
+                   <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
+                   <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
+                   <li>The Boundary Inheritance Codec is developed for robustly estimating the correspondences between projector and camera, to make accurate triangulation for 3D point cloud. </li>
+                   <li>Auto-exposure control technique is applied to help the camera captures objects in different lighting condition. </li>
                  </ul>
                </div>
              </div>
@@ -102,11 +198,36 @@
      </div>
 
 
-      <div class="feature-sub">
-        <div class="container">
-          <div class="sub-inner">
-            <h1 class="wow fadeInUp" data-wow-delay="0.1s">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</h1>
-            <a href="#" class="btn btn-action fadeIn">Buy now</a>
+      <div class="feature-sub" id="videosec">
+        <div class="container" style="">
+          <div class="sub-innerx" style="">
+             <div class="col-md-6">
+               <div class="features-list">
+                <div class="da-img">
+                    <iframe src="http://player.vimeo.com/video/203680587?title=0&amp;byline=0&amp;portrait=0&amp;" width="100%" height="300" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                </div>
+               </div>
+             </div>
+              <div class="col-md-6">
+               <div class="features-list">
+                 <h1 style="font-size: 36px;color: #FFFFFF;
+                    font-weight: 400;
+                    line-height: 1.2;
+                    margin-top: 10px;
+                    margin-bottom: 0;" class="wow fadeInUp" data-wow-delay="0.1s">High Speed IR 3D Camera</h1>
+                  <ul style="font-family: Poppins;
+                    font-size: 14px;
+                    color: #FFFFFF;
+                    font-weight: 300;
+                    line-height: 1.4;
+                    margin-top: 20px;
+                    margin-bottom: 40px;" class="wow fadeInUp" data-wow-delay="0.2s">
+                   <li>Accurate boundary estimation</li>
+                   <li>Boundary inheritance from upper layer to lower layer</li>
+                   <li>Region based inheritance for correspondence</li>
+                  </ul>
+               </div>
+             </div>
           </div>
         </div>
       </div>
@@ -223,29 +344,36 @@
           <div class="row">
             <div class="col-md-6">
               <div class="pricing-content">
-                <h1 class="wow fadeInUp" data-wow-delay="0.1s">Sed ut perspiciatis unde omnis</h1>
-                <h4 class="wow fadeInUp" data-wow-delay="0.2s">Sed ut perspiciatis unde omnis</h4>
+                <h1 class="wow fadeInUp" data-wow-delay="0.1s">Alligator 3D Camera</h1>
+                <h4 class="wow fadeInUp" data-wow-delay="0.2s">High Accuracy and Robust Structured Light Based 3D Camera</h4>
                 <div class="form wow fadeInUp" data-wow-delay="0.3s">
                     <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="Name" autocomplete="off">
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="email" name="email" placeholder="Email" autocomplete="off">
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="phone" placeholder="Phone Number" autocomplete="off">
-
-                      <input class="submit-button submit-button2" type="submit" value="Purchace Request">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="Name*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="organization" placeholder="Organization*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="email" name="email2" placeholder="Email*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="phone" placeholder="Phone Number*" autocomplete="off">
+                      <textarea rows="29" style="width: 92%;
+                      float: left;
+                      border-radius: 5px;
+                      outline: none;
+                      height: 80px;
+                      margin-bottom: 3px;
+                      background-color: #F9F9F9;
+                      border:none;
+                      resize: none;
+                      padding: 2px;color: #222222;
+                      font-family: Poppins;
+                      padding: 0;
+                      font-size: 0.9em;" name="add-comment" placeholder="additional comment"></textarea>
+                      <input id="pbtn" class="submit-button submit-button2" type="submit" value="Purchace Request">
                     </form>
                     <div class="success-message"></div>
                     <div class="error-message"></div>
                 </div>
-                <div class="btn-buy">
-                  <a href="#"><img class="img-responsive wow fadeIn" data-wow-delay="0.4s" src="/assets/logos/amazon_logo.png" width="200" alt="Buy" /></a>
-                </div>
-                <div class="price-tag">
-                  <h2 class="wow fadeInUp" data-wow-delay="0.5s">at just $99.98</h2>
-                </div>
               </div>
             </div>
             <div class="col-md-6">
-              <img class="img-responsive wow fadeIn" src="/assets/images/pricing_image.jpg" alt="Image Pricing" />
+              <img class="img-responsive wow fadeIn" src="/assets/images/pricing.jpg" alt="Image Pricing" />
             </div>
           </div>
         </div>
@@ -256,19 +384,19 @@
       <div class="cta-sub no-color">
         <div class="container">
           <div class="cta-inner">
-          <h1 class="wow fadeInUp" data-wow-delay="0s">Sed ut perspiciatis unde omnis</h1>
-            <p class="wow fadeInUp" data-wow-delay="0.2s">
-            Sed ut perspiciatis unde omnis <br class="hidden-xs"> Sed ut perspiciatis unde omnis
-            </p>
-          <div class="form wow fadeInUp" data-wow-delay="0.3s">
-            <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-              <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off"><input class="submit-button" type="submit" value="Subscribe">
-            </form>
-            <div class="success-message"></div>
-            <div class="error-message"></div>
+            <h1 class="wow fadeInUp" data-wow-delay="0s">Love offers and discounts? Subscribe and save.</h1>
+              <p class="wow fadeInUp" data-wow-delay="0.2s">
+              Just enter your email address and we'll take care of the rest.
+              </p>
+            <div class="form wow fadeInUp" data-wow-delay="0.3s">
+              <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
+                <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off"><input class="submit-button" type="submit" value="Subscribe">
+              </form>
+              <div class="success-message"></div>
+              <div class="error-message"></div>
+            </div>
           </div>
         </div>
-      </div>
       </div>
 
       <!-- Footer Section -->
@@ -276,15 +404,15 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6">
-                  <img class="img-circle" src="/assets/logos/logo.png" width="80" height="30" alt="Image" />
+                  <img class="img-circle" src="/assets/logos/ing-logo-sm.png"  alt="Image" />
                   <p>
-                    Sed ut perspiciatis unde omnis <br class="hidden-xs"> Sed ut perspiciatis unde omnis
-                    Sed ut perspiciatis unde omnis <br class="hidden-xs"> Sed ut perspiciatis unde omnis
+                    A technology startup based somewhere in the world. <br class="hidden-xs"> making the finest bluetooth
+                    speakers ever made. <br class="hidden-xs"> You'll know our location if you really love us.
                   </p>
 
                 <div class="footer-text">
                   <p>
-                    Copyright © 2016 Lorem Inc. All Rights Reserved.
+                    Copyright © 2016 INGVISION. All Rights Reserved.
                   </p>
                 </div>
               </div>
@@ -296,7 +424,7 @@
                   <p>
                     Contact our 24/7 customer support if you have any <br class="hidden-xs"> questions. We'll help you out.
                   </p>
-                  <a href="mailto:support@gmail.com">support@gmail.com</a>
+                  <a href="mailto:support@ingvision.co.kr">support@ingvision.co.kr</a>
                 </div>
               </div>
             </div>
@@ -314,11 +442,56 @@
     </div><!-- Main Section -->
   </div><!-- Wrapper-->
 
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Features & Specifications</h4>
+      </div>
+      <div class="modal-body">
+
+               <div class="features-listx">
+                 <ul class="wowx">
+                   <li>- The structured light 3D camera use one projector and one camera to capture 3D points of the objects and scene. With the advantages of projecting patterns, this type of 3D camera can capture various surface properties, including nontextured surface where stereo camera cannot, and it is very accurate and robust.</li>
+                   <p>&nbsp;</p>
+                   <li>- The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
+                   <p>&nbsp;</p>
+                   <li>- The Boundary Inheritance Codec is developed for robustly estimating the correspondences between projector and camera, to make accurate triangulation for 3D point cloud. </li>
+                   <p>&nbsp;</p>
+                   <li>- Auto-exposure control technique is applied to help the camera captures objects in different lighting condition. </li>
+                   <p>&nbsp;</p>
+                   <li>- Structured light based 3D camera can provide very dense, high accuracy, and low noise 3D point cloud of the object or scene. </li>
+                   <p>&nbsp;</p>
+                   <li>- With the developed technologies, the camera can work well in different lighting condition. </li>
+                   <p>&nbsp;</p>
+                   <li>- The camera can provide not only the 3D point cloud but also the 2D color image; there is no need to do alignment between 3D points and 2D image.</li>
+                   <p>&nbsp;</p>
+                   <li>- A complete User Interface program as well as C++ programming API are provided to customers.</li>
+                   
+                 </ul>
+               </div>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
 <!-- Jquery and Js Plugins -->
   <script type="text/javascript" src="/assets/js/jquery-2.1.1.js"></script>
   <script type="text/javascript" src="/assets/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/assets/js/plugins.js"></script>
   <script type="text/javascript" src="/assets/js/menu.js"></script>
   <script type="text/javascript" src="/assets/js/custom.js"></script>
+  <script type="text/javascript" src="/assets/js/index.js"></script>
   </body>
 </html>
