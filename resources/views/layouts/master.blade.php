@@ -20,31 +20,68 @@
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
   </head>
   <body>
+    <style type="text/css">
+      .mynavebar{
+        background:  #1c1e20 !important;
+      }
+      .navbar-nav li a,.navbar-brand{
+        color: #fff !important;
+        letter-spacing: 1px;
+        text-decoration: none;
+        transition: color 250ms;
+        font-weight: 600;
+      }
+      .navbar {
+        font-size: 16px !important;
+        padding-top: 5px !important;
+        height: 65px !important;
+    }
+    .nav>li>a:focus, .nav>li>a:hover {
+        /* text-decoration: none; */
+         background-color: initial !important; 
+         color: #777879 !important; 
+    }
+    .navbar-toggle .icon-bar {
+        background-color: #fff !important;
+    }
+    div#bs-example-navbar-collapse-1 {
+        background-color: #1c1e20 !important;
+    }
+    .navbar-brand{
+      padding-top: 7px !important;;
+      padding-bottom: 15px !important;;
+    }
+    </style>
     <div class="wrapper">
         <div class="container">
-          <nav class="navbar navbar-default navbar-fixed-top">
-          <div class="container">
-                <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-              <a style="padding-top: 0;" class="navbar-brand page-scroll" href="#main"><img src="/assets/logos/ing-logo-sm.png" alt="Lorem" /></a>
+          <nav class="navbar mynavebar navbar-fixed-top">
+            <div class="container">
+                  <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+                <a style="padding-left: 0" class="navbar-brand page-scroll" href="#main">
+                  <div style="width: 100px;text-align: center;">
+                    <span>ING</span></br>
+                    <span>VISION</span>
+                  </div>
+                </a>
+                </div>
+                  <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                      <li><a class="page-scroll" href="#main">Product</a></li>
+                      <li><a class="page-scroll" href="#features">Features</a></li>
+                      <li><a class="page-scroll" href="#videosec">Video</a></li>
+                      <li><a class="page-scroll" href="#purchase">Purchase</a></li>
+                      <li><a class="page-scroll" href="#contact">Contact</a></li>
+                  </ul>
               </div>
-                <!-- Collect the nav links, forms, and other content for toggling -->
-              <div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li><a class="page-scroll" href="#main">Product</a></li>
-                    <li><a class="page-scroll" href="#features">Features</a></li>
-                    <li><a class="page-scroll" href="#videosec">Video</a></li>
-                    <li><a class="page-scroll" href="#purchase">Purchase</a></li>
-                    <li><a class="page-scroll" href="#contact">Contact</a></li>
-                </ul>
             </div>
-          </div>
         </nav><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
 
@@ -53,9 +90,12 @@
         <div class="container">
           <div class="row">
             <div class="col-md-6">
-<!--               <img class="img-responsive wow fadeIn" src="/assets/images/hero1.jpg" alt="Hero Image" /> -->
-
-
+              <style type="text/css">
+                .bwcar{
+                  color: rgb(0, 0, 0) !important;
+                  text-shadow: 0 1px 2px rgba(86, 85, 85, 0.6) !important;
+                }
+              </style>
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
@@ -68,14 +108,27 @@
                 <div class="carousel-inner" role="listbox">
                   <div class="item active">
                     <img src="/assets/images/hero1.jpg" alt="Scanned-model">
+                    <div class="carousel-caption">
+                    <h3 class="bwcar">Chania</h3>
+                      <p class="bwcar">The atmosphere in Chania has a touch of Florence and Venice.</p>
+                      <button style="margin-top: 9px" class="btn btn-sm btn-primary">Learn More</button>
+                    </div>
                   </div>
 
                   <div class="item">
                     <img src="/assets/images/hero2.jpg" alt="Scanned-model">
+                    <div class="carousel-caption">
+                    <h3>Chania</h3>
+                      <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                    </div>
                   </div>
 
                   <div class="item">
                     <img src="/assets/images/hero3.jpg" alt="Alligator">
+                    <div class="carousel-caption">
+                    <h3  class="bwcar">Alligator</h3>
+                      <p  class="bwcar">Structured Light Based 3D Camera Light Weight, Compact, and Accurate 3D Camera For Service/Industrial Robots and Entertainmen</p>
+                    </div>
                   </div>
 
                 </div>
