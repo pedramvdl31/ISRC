@@ -31,26 +31,46 @@
         transition: color 250ms;
         font-weight: 600;
       }
+      .navbar-nav li a{
+        line-height: 40px !important;
+        padding-top: 10px !important;
+        padding-bottom: 0 !important;
+      }
+
       .navbar {
         font-size: 16px !important;
-        padding-top: 5px !important;
+        padding-top: 0px !important;
         height: 65px !important;
-    }
-    .nav>li>a:focus, .nav>li>a:hover {
+      }
+      .nav>li>a:focus, .nav>li>a:hover {
         /* text-decoration: none; */
          background-color: initial !important; 
          color: #777879 !important; 
-    }
-    .navbar-toggle .icon-bar {
+      }
+      .navbar-toggle .icon-bar {
         background-color: #fff !important;
-    }
-    div#bs-example-navbar-collapse-1 {
+      }
+      div#bs-example-navbar-collapse-1 {
         background-color: #1c1e20 !important;
-    }
-    .navbar-brand{
-      padding-top: 7px !important;;
-      padding-bottom: 15px !important;;
-    }
+      }
+      .navbar-brand{
+        padding-top: 10px !important;
+        padding-bottom: 15px !important;;
+      }
+      #_a12{
+        float: left;
+        border-radius: 5px;
+        outline: none;
+        height: 80px;
+        margin-bottom: 3px;
+        background-color: #F9F9F9;
+        border:none;
+        resize: none;
+        padding: 2px;
+        color: #222222;
+        font-family: Poppins;
+        font-size: 0.9em;        
+      }
     </style>
     <div class="wrapper">
         <div class="container">
@@ -401,23 +421,11 @@
                 <h4 class="wow fadeInUp" data-wow-delay="0.2s">High Accuracy and Robust Structured Light Based 3D Camera</h4>
                 <div class="form wow fadeInUp" data-wow-delay="0.3s">
                     <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="Name*" autocomplete="off">
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="organization" placeholder="Organization*" autocomplete="off">
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="email" name="email2" placeholder="Email*" autocomplete="off">
-                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="phone" placeholder="Phone Number*" autocomplete="off">
-                      <textarea rows="29" style="width: 92%;
-                      float: left;
-                      border-radius: 5px;
-                      outline: none;
-                      height: 80px;
-                      margin-bottom: 3px;
-                      background-color: #F9F9F9;
-                      border:none;
-                      resize: none;
-                      padding: 2px;color: #222222;
-                      font-family: Poppins;
-                      padding: 0;
-                      font-size: 0.9em;" name="add-comment" placeholder="additional comment"></textarea>
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="&nbsp;&nbsp;&nbsp;Name*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="organization" placeholder="&nbsp;&nbsp;&nbsp;Organization*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="email" name="email2" placeholder="&nbsp;&nbsp;&nbsp;Email*" autocomplete="off">
+                      <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="phone" placeholder="&nbsp;&nbsp;&nbsp;Phone Number*" autocomplete="off">
+                      <textarea id="_a12" class="col-md-11 col-sm-12 col-xs-12" rows="29" style="" name="add-comment" placeholder="&nbsp;&nbsp;additional comment"></textarea>
                       <input id="pbtn" class="submit-button submit-button2" type="submit" value="Purchace Request">
                     </form>
                     <div class="success-message"></div>

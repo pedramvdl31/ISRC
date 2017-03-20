@@ -1791,7 +1791,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 .subscribe-form input {
   color: #222222;
   font-family: Poppins;
-  padding: 2px;
+  padding: 0px;
   font-size: 0.9em;
 }
 
@@ -2138,7 +2138,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
 	.features .features-list {
-		padding: 80px 0 0 0;
+		padding: 50px 0 0 0;
 	}
 
 	.split-content {
