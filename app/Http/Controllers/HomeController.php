@@ -69,6 +69,16 @@ class HomeController extends Controller
      * @return Response
      */
     public function getHomePage(){
+
+
+        $user = '';
+
+        // Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
+        //     $m->from('hello@app.com', 'Your Application');
+
+        //     $m->to('pedramkhoshnevis@gmail.com', 'pedram')->subject('Your Reminder!');
+        // });
+
         return view('index')
         ->with('layout','layouts.master');
     }
@@ -87,39 +97,48 @@ class HomeController extends Controller
             $suc = 'Thank you for contacting us - we will get back to you soon!';
             $pform = null;
             parse_str(Input::get('pform'), $pform);
-            $name = $pform['name'];
-            $organization = $pform['organization'];
-            $email = $pform['email2'];
-            $phone = $pform['phone'];
-            $add_comment = $pform['add-comment'];
+            $mdata = array( 'name' => $pform['name'],
+                            'organization' => $pform['organization'],
+                            'email' => $pform['email2'],
+                            'phone' => $pform['phone'],
+                            'model' => $pform['model'],
+                            'comment' => $pform['add-comment'],
+                            'captcha' => $pform['g-recaptcha-response'],
+                            );
 
-
-            if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            if (filter_var($mdata['email'], FILTER_VALIDATE_EMAIL)) {
                 $status = 200;
             } else {
                 $flag=1;
-                $err  = 'Not a valid email address!';
+                $err  = 'Not a valid email address.';
                 $status = 400;
             }
-            if ($name!=""||!empty($name)) {
+            if ($mdata['captcha']!=""||!empty($mdata['captcha'])) {
                 $status = 200;
             } else {
                 $flag=1;
-                $err  = 'Please fill in required fields';
+                $err  = 'Please check the the captcha.';
                 $status = 400;
             }
-            if ($phone!=""||!empty($phone)) {
+            if ($mdata['name']!=""||!empty($mdata['name'])) {
                 $status = 200;
             } else {
                 $flag=1;
-                $err  = 'Please fill in required fields';
+                $err  = 'Please fill in required fields.';
                 $status = 400;
             }
-            if ($organization!=""||!empty($organization)) {
+            if ($mdata['phone']!=""||!empty($mdata['phone'])) {
                 $status = 200;
             } else {
                 $flag=1;
-                $err  = 'Please fill in required fields';
+                $err  = 'Please fill in required fields.';
+                $status = 400;
+            }
+            if ($mdata['organization']!=""||!empty($mdata['organization'])) {
+                $status = 200;
+            } else {
+                $flag=1;
+                $err  = 'Please fill in required fields.';
                 $status = 400;
             }
             if ($flag==1) {
@@ -127,17 +146,19 @@ class HomeController extends Controller
             }
 
             if ($flag==0) {
-                if (Mail::send('emails.send_message', array(
-                            'email' => $email,
-                            'message_text' => 'sada'
-                        ), function($message) use ($email)
-                        {
-                            $message->from('postmaster@webprinciples.com');
-                            $message->to('pedramkhoshnevis@gmail.com');
-                            $message->subject('Message from Your Website!');
-                        })) {
-                    $status = 200;
-                }
+                $all_emails = ['sukhan@ingvision.co.kr', 'sales@ingvision.co.kr','support@ingvision.co.kr','master@ingvision.co.kr'];
+                if (
+                        Mail::send('emails.purchase_request', ['mdata' => $mdata], function ($m) use ($all_emails) {
+                            $m->from('support@www.webprinciples.com', 'INGVision');
+                            $m->to($all_emails)->subject('INGVISION-Purchase Request');
+                        })
+                    ) {
+                            return Response::json(array(
+                                'status' => $status,
+                                'err' => $err,
+                                'suc' => $suc
+                                ));
+                             }
             }
 
             return Response::json(array(

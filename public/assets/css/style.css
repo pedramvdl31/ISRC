@@ -16,7 +16,56 @@ All Contents
 .carousel-control.right,.carousel-control.left {
     background: none !important;
 }
+.mynavebar{
+background:  #1c1e20 !important;
+}
+.navbar-nav li a,.navbar-brand{
+color: #fff !important;
+letter-spacing: 1px;
+text-decoration: none;
+transition: color 250ms;
+font-weight: 600;
+}
+.navbar-nav li a{
+line-height: 40px !important;
+padding-top: 10px !important;
+padding-bottom: 0 !important;
+}
 
+.navbar {
+font-size: 16px !important;
+padding-top: 0px !important;
+height: 65px !important;
+}
+.nav>li>a:focus, .nav>li>a:hover {
+/* text-decoration: none; */
+ background-color: initial !important; 
+ color: #777879 !important; 
+}
+.navbar-toggle .icon-bar {
+background-color: #fff !important;
+}
+div#bs-example-navbar-collapse-1 {
+background-color: #1c1e20 !important;
+}
+.navbar-brand{
+padding-top: 10px !important;
+padding-bottom: 15px !important;;
+}
+#_a12{
+float: left;
+border-radius: 5px;
+outline: none;
+height: 80px;
+margin-bottom: 3px;
+background-color: #F9F9F9;
+border:none;
+resize: none;
+padding: 2px;
+color: #222222;
+font-family: Poppins;
+font-size: 0.9em;        
+}
 /*----- 1. Reset.css -----*/
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -411,7 +460,7 @@ p {
 }
 
 .hero-content {
-	padding: 100px 0 100px 0;
+	padding: 50px 0 100px 0;
 	overflow: hidden;
 }
 
@@ -717,10 +766,9 @@ font-family: Arial;
 	color: #3333CC;
 }
 
-
-input[type="text"],
+input[type="email"],input[type="text"],
 textarea,
-textarea.form-control {
+textarea.form-control,select {
 	height: 45px;
     margin: 0;
     padding: 0 20px;
@@ -737,6 +785,7 @@ textarea.form-control {
     -o-transition: all .3s; -moz-transition: all .3s; -webkit-transition: all .3s; -ms-transition: all .3s; transition: all .3s;
 }
 
+
 textarea,
 textarea.form-control {
 	padding-top: 10px;
@@ -744,8 +793,8 @@ textarea.form-control {
 	line-height: 30px;
 }
 
-input[type="text"]:focus,
-textarea:focus,
+input[type="email"]:focus,input[type="text"]:focus,
+textarea:focus,select:focus,
 textarea.form-control:focus {
 	outline: 0;
 	background: #FFFFFF;
@@ -753,9 +802,9 @@ textarea.form-control:focus {
     -moz-box-shadow: none; -webkit-box-shadow: none; box-shadow: none;
 }
 
-/*input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
-input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
-input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }*/
+input[type="email"]:-moz-placeholder,input[type="text"]:-moz-placeholder, textarea:-moz-placeholder, textarea.form-control:-moz-placeholder { color: #888; }
+input[type="email"]:-ms-input-placeholder,input[type="text"]:-ms-input-placeholder, textarea:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: #888; }
+input[type="email"]::-webkit-input-placeholder,input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: #888; }
 
 
 
@@ -877,7 +926,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 }
 
 .app .hero-content {
-	padding: 100px 0 0 0;
+	padding: 50px 0 0 0;
 }
 
 .app img {
@@ -1287,7 +1336,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	padding: 150px 0 150px 0;
+	padding: 50px 0 50px 0;
 }
 
 .product .sub-inner {
@@ -2006,7 +2055,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 	}
 
 	.form .hero-content {
-		padding: 100px 0 100px 0;
+		padding: 50px 0 100px 0;
 		overflow: hidden;
 	}
 
@@ -2015,7 +2064,7 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 	}
 
 	.product .hero-content {
-		padding: 150px 0 100px 0;
+		padding: 50px 0 100px 0;
 		text-align: left;
 	}
 
@@ -2149,21 +2198,57 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 
 
 @media screen and (min-width: 400px) and (max-width: 600px) {
+	.vcont{
+		padding: 0;
+	}
+	.hero-content {
+	    padding: 50px 0 100px 0;
+	}
+	.hero-section {
+	    padding: 100px 0 0 0;
+	}
+	button.navbar-toggle {
+	    margin-top: 14px;
+	}
+	a.navbar-brand.page-scroll {
+	    margin-top: 2px;
+	}
+	ul.wow.fadeInUp {
+		    padding-left: 0 !important;
+		}
+	.subscribe-form .mail {
+	padding: 0 30px 0 20px;
+	border-radius: 5px 0 0 5px;
+	}
 
- .subscribe-form .mail {
-   padding: 0 30px 0 20px;
-   border-radius: 5px 0 0 5px;
- }
-
- .subscribe-form .submit-button {
-   padding: 0 5px 0 5px;
-   border-radius: 0 5px 5px 0;
- }
+	.subscribe-form .submit-button {
+	padding: 0 5px 0 5px;
+	border-radius: 0 5px 5px 0;
+	}
 }
 
+@media screen and (max-width: 767px) {
 
+}
 @media screen and (max-width: 399px) {
-
+	.vcont{
+		padding: 0;
+	}
+	.hero-section {
+	    padding: 100px 0 0 0;
+	}
+	.hero-content {
+	    padding: 50px 0 100px 0;
+	}
+	a.navbar-brand.page-scroll {
+	    margin-top: 2px;
+	}
+	button.navbar-toggle {
+	    margin-top: 14px;
+	}
+	ul.wow.fadeInUp {
+	    padding-left: 0 !important;
+	}
 	.cta-sub {
 		text-align: center;
 	}
@@ -2172,38 +2257,38 @@ input[type="text"]::-webkit-input-placeholder, textarea::-webkit-input-placehold
 		text-align: center;
 	}
 
- .subscribe-form .mail {
-	 text-align: center;
-   padding: 0 0 0 0;
-   border-radius: 5px 0 0 5px;
- }
+	.subscribe-form .mail {
+	 	text-align: center;
+		padding: 0 0 0 0;
+		border-radius: 5px 0 0 5px;
+	}
 
- .subscribe-form .submit-button {
-   padding: 0 5px 0 5px;
-   border-radius: 0 5px 5px 0;
-	 margin-top: 15px;
- }
+	.subscribe-form .submit-button {
+		padding: 0 5px 0 5px;
+		border-radius: 0 5px 5px 0;
+		margin-top: 15px;
+	}
 
- .form .sub-form .subscribe-form {
- 	text-align: left;
- }
+	.form .sub-form .subscribe-form {
+		text-align: left;
+	}
 
 
-  .form .sub-form .subscribe-form .mail {
- 	 text-align: center;
-    padding: 0 0 0 0;
-    border-radius: 5px 0 0 5px;
-  }
+	.form .sub-form .subscribe-form .mail {
+		text-align: center;
+		padding: 0 0 0 0;
+		border-radius: 5px 0 0 5px;
+	}
 
-  .form .sub-form .subscribe-form .submit-button {
-    padding: 0 5px 0 5px;
-    border-radius: 0 5px 5px 0;
- 	 margin-top: 15px;
-  }
+	.form .sub-form .subscribe-form .submit-button {
+		padding: 0 5px 0 5px;
+		border-radius: 0 5px 5px 0;
+		margin-top: 15px;
+	}
 
- .back-to-top {
-	right: 10px;
-}
+	.back-to-top {
+		right: 10px;
+	}
 
  }
 
