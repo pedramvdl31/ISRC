@@ -25,8 +25,6 @@ use Symfony\Component\CssSelector\Parser\ParserInterface;
  * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
  *
  * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- *
- * @internal
  */
 class Translator implements TranslatorInterface
 {
@@ -70,6 +68,9 @@ class Translator implements TranslatorInterface
      */
     private $attributeMatchingTranslators = array();
 
+    /**
+     * Constructor.
+     */
     public function __construct(ParserInterface $parser = null)
     {
         $this->mainParser = $parser ?: new Parser();
@@ -146,7 +147,7 @@ class Translator implements TranslatorInterface
      *
      * @param Extension\ExtensionInterface $extension
      *
-     * @return $this
+     * @return Translator
      */
     public function registerExtension(Extension\ExtensionInterface $extension)
     {
@@ -182,7 +183,7 @@ class Translator implements TranslatorInterface
      *
      * @param ParserInterface $shortcut
      *
-     * @return $this
+     * @return Translator
      */
     public function registerParserShortcut(ParserInterface $shortcut)
     {
@@ -265,9 +266,9 @@ class Translator implements TranslatorInterface
      * @param string    $attribute
      * @param string    $value
      *
-     * @return XPathExpr
-     *
      * @throws ExpressionErrorException
+     *
+     * @return XPathExpr
      */
     public function addAttributeMatching(XPathExpr $xpath, $operator, $attribute, $value)
     {

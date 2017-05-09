@@ -3,7 +3,6 @@
 namespace League\Flysystem\Util;
 
 use Finfo;
-use ErrorException;
 
 /**
  * @internal
@@ -13,22 +12,20 @@ class MimeType
     /**
      * Detects MIME Type based on given content.
      *
-     * @param mixed $content
+     * @param string $content
      *
      * @return string|null MIME Type or NULL if no mime type detected
      */
     public static function detectByContent($content)
     {
-        if ( ! class_exists('Finfo') || ! is_string($content)) {
+        if ( ! class_exists('Finfo')) {
             return;
         }
-        try {
-            $finfo = new Finfo(FILEINFO_MIME_TYPE);
 
-            return $finfo->buffer($content) ?: null;
-        } catch( ErrorException $e ) {
-            // This is caused by an array to string conversion error.
-        }
+        $finfo = new Finfo(FILEINFO_MIME_TYPE);
+        $mimeType = $finfo->buffer($content);
+
+        return $mimeType ?: null;
     }
 
     /**
@@ -42,27 +39,13 @@ class MimeType
     {
         static $extensionToMimeTypeMap;
 
-        if (! $extensionToMimeTypeMap) {
+        if ( ! $extensionToMimeTypeMap) {
             $extensionToMimeTypeMap = static::getExtensionToMimeTypeMap();
         }
 
         if (isset($extensionToMimeTypeMap[$extension])) {
             return $extensionToMimeTypeMap[$extension];
         }
-
-        return 'text/plain';
-    }
-
-    /**
-     * @param string $filename
-     *
-     * @return string
-     */
-    public static function detectByFilename($filename)
-    {
-        $extension = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
-
-        return empty($extension) ? 'text/plain' : static::detectByFileExtension($extension);
     }
 
     /**
@@ -141,7 +124,6 @@ class MimeType
             'bmp'   => 'image/bmp',
             'tiff'  => 'image/tiff',
             'tif'   => 'image/tiff',
-            'svg'   => 'image/svg+xml',
             'css'   => 'text/css',
             'html'  => 'text/html',
             'htm'   => 'text/html',

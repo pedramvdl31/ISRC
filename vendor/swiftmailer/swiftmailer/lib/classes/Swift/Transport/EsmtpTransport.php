@@ -42,7 +42,6 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
         'blocking' => 1,
         'tls' => false,
         'type' => Swift_Transport_IoBuffer::TYPE_SOCKET,
-        'stream_context_options' => array(),
         );
 
     /**
@@ -140,7 +139,6 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
      */
     public function setEncryption($encryption)
     {
-        $encryption = strtolower($encryption);
         if ('tls' == $encryption) {
             $this->_params['protocol'] = 'tcp';
             $this->_params['tls'] = true;
@@ -160,30 +158,6 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
     public function getEncryption()
     {
         return $this->_params['tls'] ? 'tls' : $this->_params['protocol'];
-    }
-
-    /**
-     * Sets the stream context options.
-     *
-     * @param array $options
-     *
-     * @return Swift_Transport_EsmtpTransport
-     */
-    public function setStreamOptions($options)
-    {
-        $this->_params['stream_context_options'] = $options;
-
-        return $this;
-    }
-
-    /**
-     * Returns the stream context options.
-     *
-     * @return array
-     */
-    public function getStreamOptions()
-    {
-        return $this->_params['stream_context_options'];
     }
 
     /**
@@ -223,8 +197,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
         foreach ($handlers as $handler) {
             $assoc[$handler->getHandledKeyword()] = $handler;
         }
-
-        @uasort($assoc, array($this, '_sortHandlers'));
+        uasort($assoc, array($this, '_sortHandlers'));
         $this->_handlers = $assoc;
         $this->_setHandlerParams();
 
@@ -270,6 +243,8 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
         return parent::executeCommand($command, $codes, $failures);
     }
 
+    // -- Mixin invocation code
+
     /** Mixin handling method for ESMTP handlers */
     public function __call($method, $args)
     {
@@ -279,7 +254,7 @@ class Swift_Transport_EsmtpTransport extends Swift_Transport_AbstractSmtpTranspo
                 )) {
                 $return = call_user_func_array(array($handler, $method), $args);
                 // Allow fluid method calls
-                if (null === $return && substr($method, 0, 3) == 'set') {
+                if (is_null($return) && substr($method, 0, 3) == 'set') {
                     return $this;
                 } else {
                     return $return;

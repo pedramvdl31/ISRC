@@ -27,7 +27,7 @@ class BeforeFilter
      */
     public function __construct()
     {
-        // Page::Isset_Homepage();
+        Page::Isset_Homepage();
         $this->route = null;
     }
     /**
@@ -40,18 +40,18 @@ class BeforeFilter
     public function handle($request, Closure $next)
     {
 
-       // Job::ViewSharesPublicData();
-       // if (Auth::check()) {
-       //      switch (Auth::user()->roles) {
-       //          case 1://SUPERADMIN 
-       //          case 2://ADMIN
-       //          case 3://SIMPLEADMIN
-       //              Job::ViewShareAdminPrivateData();
-       //              break;
-       //          default:
-       //              break;
-       //      }
-       //  }
+       Job::ViewSharesPublicData();
+       if (Auth::check()) {
+            switch (Auth::user()->roles) {
+                case 1://SUPERADMIN 
+                case 2://ADMIN
+                case 3://SIMPLEADMIN
+                    Job::ViewShareAdminPrivateData();
+                    break;
+                default:
+                    break;
+            }
+        }
 
 
 

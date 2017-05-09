@@ -863,7 +863,7 @@ class Job extends Model
 
 	static public function imageValidator($image_path) {
 		$full_path = public_path("/assets/images/profile-images/perm/".$image_path);
-		if (!file_exists($full_path)) {
+		if ( $image_path == '' || $image_path == NULL || !file_exists($full_path)) {
 		    $image_path = "blank_male.png";
 		}
 		return $image_path;

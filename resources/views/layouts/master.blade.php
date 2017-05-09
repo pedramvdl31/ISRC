@@ -18,8 +18,9 @@
     <link rel="stylesheet" href="/assets/css/owl.carousel.css">
     <link rel="stylesheet" href="/assets/css/owl.theme.css">
     <link rel="stylesheet" href="/assets/css/ionicons.min.css">
+    <link rel="stylesheet" href="/assets/css/custom.css?ver=0.3">
     <!-- Resource style -->
-    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="/assets/css/style.css?ver=0.1" rel="stylesheet" type="text/css" media="all" />
     @yield('stylesheets')
     <script src='https://www.google.com/recaptcha/api.js'></script>
 </head>
@@ -39,7 +40,7 @@
                         </button>
                         <a style="padding-left: 0" class="navbar-brand page-scroll" href="#main">
                             <div style="width: 100px;text-align: center;">
-                                <span>ING</span>
+                                <span>&nbsp;ING</span>
                                 </br>
                                 <span>VISION</span>
                             </div>
@@ -50,7 +51,7 @@
                         <ul class="nav navbar-nav">
                             <li><a class="page-scroll" href="#main">Product</a>
                             </li>
-                            <li><a class="page-scroll" href="#features">Features</a>
+                            <li><a class="page-scroll" href="#features">TECH SPECS</a>
                             </li>
                             <li><a class="page-scroll" href="#videosec">Video</a>
                             </li>
@@ -113,6 +114,27 @@
 
         </div>
     </div>
+    <!-- Modal -->
+    <div id="newsmodal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title newsmodal-title"></h4>
+                </div>
+                <div class="modal-body newsmodal-body">
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
 
 
     <!-- Jquery and Js Plugins -->
@@ -121,7 +143,7 @@
     <script type="text/javascript" src="/assets/js/plugins.js"></script>
     <script type="text/javascript" src="/assets/js/menu.js"></script>
     <script type="text/javascript" src="/assets/js/custom.js"></script>
-    <script type="text/javascript" src="/assets/js/index.js"></script>
+    <script type="text/javascript" src="/assets/js/index.js?ver0.1"></script>
     @yield('scripts')
 </body>
 

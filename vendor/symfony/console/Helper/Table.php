@@ -93,7 +93,7 @@ class Table
      *
      * @param string $name The style name
      *
-     * @return TableStyle
+     * @return TableStyle A TableStyle instance
      */
     public static function getStyleDefinition($name)
     {
@@ -101,11 +101,11 @@ class Table
             self::$styles = self::initStyles();
         }
 
-        if (isset(self::$styles[$name])) {
-            return self::$styles[$name];
+        if (!self::$styles[$name]) {
+            throw new \InvalidArgumentException(sprintf('Style "%s" is not defined.', $name));
         }
 
-        throw new \InvalidArgumentException(sprintf('Style "%s" is not defined.', $name));
+        return self::$styles[$name];
     }
 
     /**
@@ -113,11 +113,17 @@ class Table
      *
      * @param TableStyle|string $name The style name or a TableStyle instance
      *
-     * @return $this
+     * @return Table
      */
     public function setStyle($name)
     {
-        $this->style = $this->resolveStyle($name);
+        if ($name instanceof TableStyle) {
+            $this->style = $name;
+        } elseif (isset(self::$styles[$name])) {
+            $this->style = self::$styles[$name];
+        } else {
+            throw new \InvalidArgumentException(sprintf('Style "%s" is not defined.', $name));
+        }
 
         return $this;
     }
@@ -251,7 +257,7 @@ class Table
      */
     private function renderColumnSeparator()
     {
-        return sprintf($this->style->getBorderFormat(), $this->style->getVerticalBorderChar());
+        $this->output->write(sprintf($this->style->getBorderFormat(), $this->style->getVerticalBorderChar()));
     }
 
     /**
@@ -268,12 +274,12 @@ class Table
             return;
         }
 
-        $rowContent = $this->renderColumnSeparator();
+        $this->renderColumnSeparator();
         foreach ($this->getRowColumns($row) as $column) {
-            $rowContent .= $this->renderCell($row, $column, $cellFormat);
-            $rowContent .= $this->renderColumnSeparator();
+            $this->renderCell($row, $column, $cellFormat);
+            $this->renderColumnSeparator();
         }
-        $this->output->writeln($rowContent);
+        $this->output->writeln('');
     }
 
     /**
@@ -300,13 +306,12 @@ class Table
         }
 
         if ($cell instanceof TableSeparator) {
-            return sprintf($this->style->getBorderFormat(), str_repeat($this->style->getHorizontalBorderChar(), $width));
+            $this->output->write(sprintf($this->style->getBorderFormat(), str_repeat($this->style->getHorizontalBorderChar(), $width)));
+        } else {
+            $width += Helper::strlen($cell) - Helper::strlenWithoutDecoration($this->output->getFormatter(), $cell);
+            $content = sprintf($this->style->getCellRowContentFormat(), $cell);
+            $this->output->write(sprintf($cellFormat, str_pad($content, $width, $this->style->getPaddingChar(), $this->style->getPadType())));
         }
-
-        $width += Helper::strlen($cell) - Helper::strlenWithoutDecoration($this->output->getFormatter(), $cell);
-        $content = sprintf($this->style->getCellRowContentFormat(), $cell);
-
-        return sprintf($cellFormat, str_pad($content, $width, $this->style->getPaddingChar(), $this->style->getPadType()));
     }
 
     /**
@@ -390,13 +395,10 @@ class Table
                 }
 
                 // create a two dimensional array (rowspan x colspan)
-                $unmergedRows = array_replace_recursive(array_fill($line + 1, $nbLines, array()), $unmergedRows);
+                $unmergedRows = array_replace_recursive(array_fill($line + 1, $nbLines, ''), $unmergedRows);
                 foreach ($unmergedRows as $unmergedRowKey => $unmergedRow) {
                     $value = isset($lines[$unmergedRowKey - $line]) ? $lines[$unmergedRowKey - $line] : '';
                     $unmergedRows[$unmergedRowKey][$column] = new TableCell($value, array('colspan' => $cell->getColspan()));
-                    if ($nbLines === $unmergedRowKey - $line) {
-                        break;
-                    }
                 }
             }
         }
@@ -519,18 +521,6 @@ class Table
                 continue;
             }
 
-            foreach ($row as $i => $cell) {
-                if ($cell instanceof TableCell) {
-                    $textLength = Helper::strlenWithoutDecoration($this->output->getFormatter(), $cell);
-                    if ($textLength > 0) {
-                        $contentColumns = str_split($cell, ceil($textLength / $cell->getColspan()));
-                        foreach ($contentColumns as $position => $content) {
-                            $row[$i + $position] = $content;
-                        }
-                    }
-                }
-            }
-
             $lengths[] = $this->getCellWidth($row, $column);
         }
 
@@ -560,6 +550,10 @@ class Table
         if (isset($row[$column])) {
             $cell = $row[$column];
             $cellWidth = Helper::strlenWithoutDecoration($this->output->getFormatter(), $cell);
+            if ($cell instanceof TableCell && $cell->getColspan() > 1) {
+                // we assume that cell value will be across more than one column.
+                $cellWidth = $cellWidth / $cell->getColspan();
+            }
 
             return $cellWidth;
         }
@@ -607,18 +601,5 @@ class Table
             'compact' => $compact,
             'symfony-style-guide' => $styleGuide,
         );
-    }
-
-    private function resolveStyle($name)
-    {
-        if ($name instanceof TableStyle) {
-            return $name;
-        }
-
-        if (isset(self::$styles[$name])) {
-            return self::$styles[$name];
-        }
-
-        throw new \InvalidArgumentException(sprintf('Style "%s" is not defined.', $name));
     }
 }

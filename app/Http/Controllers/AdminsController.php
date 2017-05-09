@@ -69,7 +69,7 @@ class AdminsController extends Controller
 
     public function getLogin() {
 
-        $this->layout = 'layouts.master-layout';
+        $this->layout = 'layouts.clear_layout';
         return view('admins.login')
             ->with('layout',$this->layout);
     }
@@ -87,7 +87,7 @@ class AdminsController extends Controller
             return (Session::has('intended_url')) ? Redirect::to(Session::get('intended_url')) : redirect()->intended('/admins');
         } else { //LOGING FAILED
             Flash::error('Wrong Username or Password!');
-            $this->layout = 'layouts.master-layout';
+            $this->layout = 'layouts.master';
             return view('admins.login')
             ->with('layout',$this->layout);
         }

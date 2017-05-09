@@ -11,7 +11,6 @@
 
 namespace Symfony\Component\EventDispatcher\Tests\Debug;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\EventDispatcher\Debug\TraceableEventDispatcher;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
@@ -19,7 +18,7 @@ use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
 use Symfony\Component\Stopwatch\Stopwatch;
 
-class TraceableEventDispatcherTest extends TestCase
+class TraceableEventDispatcherTest extends \PHPUnit_Framework_TestCase
 {
     public function testAddRemoveListener()
     {
@@ -55,33 +54,6 @@ class TraceableEventDispatcherTest extends TestCase
         $tdispatcher->addListener('foo', $listener = function () {});
         $this->assertTrue($dispatcher->hasListeners('foo'));
         $this->assertTrue($tdispatcher->hasListeners('foo'));
-    }
-
-    public function testGetListenerPriority()
-    {
-        $dispatcher = new EventDispatcher();
-        $tdispatcher = new TraceableEventDispatcher($dispatcher, new Stopwatch());
-
-        $tdispatcher->addListener('foo', function () {}, 123);
-
-        $listeners = $dispatcher->getListeners('foo');
-        $this->assertSame(123, $tdispatcher->getListenerPriority('foo', $listeners[0]));
-
-        // Verify that priority is preserved when listener is removed and re-added
-        // in preProcess() and postProcess().
-        $tdispatcher->dispatch('foo', new Event());
-        $listeners = $dispatcher->getListeners('foo');
-        $this->assertSame(123, $tdispatcher->getListenerPriority('foo', $listeners[0]));
-    }
-
-    public function testGetListenerPriorityReturnsZeroWhenWrappedMethodDoesNotExist()
-    {
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
-        $traceableEventDispatcher = new TraceableEventDispatcher($dispatcher, new Stopwatch());
-        $traceableEventDispatcher->addListener('foo', function () {}, 123);
-        $listeners = $traceableEventDispatcher->getListeners('foo');
-
-        $this->assertSame(0, $traceableEventDispatcher->getListenerPriority('foo', $listeners[0]));
     }
 
     public function testAddRemoveSubscriber()
@@ -131,7 +103,7 @@ class TraceableEventDispatcherTest extends TestCase
 
     public function testLogger()
     {
-        $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+        $logger = $this->getMock('Psr\Log\LoggerInterface');
 
         $dispatcher = new EventDispatcher();
         $tdispatcher = new TraceableEventDispatcher($dispatcher, new Stopwatch(), $logger);
@@ -146,7 +118,7 @@ class TraceableEventDispatcherTest extends TestCase
 
     public function testLoggerWithStoppedEvent()
     {
-        $logger = $this->getMockBuilder('Psr\Log\LoggerInterface')->getMock();
+        $logger = $this->getMock('Psr\Log\LoggerInterface');
 
         $dispatcher = new EventDispatcher();
         $tdispatcher = new TraceableEventDispatcher($dispatcher, new Stopwatch(), $logger);
@@ -166,12 +138,12 @@ class TraceableEventDispatcherTest extends TestCase
 
         $dispatcher = new EventDispatcher();
         $tdispatcher = new TraceableEventDispatcher($dispatcher, new Stopwatch());
-        $tdispatcher->addListener('foo', function () use (&$called) { $called[] = 'foo1'; }, 10);
-        $tdispatcher->addListener('foo', function () use (&$called) { $called[] = 'foo2'; }, 20);
+        $tdispatcher->addListener('foo', $listener1 = function () use (&$called) { $called[] = 'foo1'; });
+        $tdispatcher->addListener('foo', $listener2 = function () use (&$called) { $called[] = 'foo2'; });
 
         $tdispatcher->dispatch('foo');
 
-        $this->assertSame(array('foo2', 'foo1'), $called);
+        $this->assertEquals(array('foo1', 'foo2'), $called);
     }
 
     public function testDispatchNested()

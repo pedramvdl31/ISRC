@@ -16,7 +16,7 @@ fi
 
 block="server {
     listen ${3:-80};
-    listen ${4:-443} ssl http2;
+    listen ${4:-443} ssl;
     server_name $1;
     root \"$2\";
 
@@ -55,4 +55,6 @@ block="server {
 
 echo "$block" > "/etc/nginx/sites-available/$1"
 ln -fs "/etc/nginx/sites-available/$1" "/etc/nginx/sites-enabled/$1"
+service nginx restart
+service php7.0-fpm restart
 service hhvm restart

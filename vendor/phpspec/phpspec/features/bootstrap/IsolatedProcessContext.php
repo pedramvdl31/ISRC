@@ -3,6 +3,8 @@
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Symfony\Component\Process\Process;
+use Symfony\Component\Filesystem\Filesystem;
+use Behat\Gherkin\Node\PyStringNode;
 
 /**
  * Defines application features from the specific context.
@@ -27,9 +29,7 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
 
         $process->run();
 
-        if ($process->getExitCode() !== 0) {
-            throw new \Exception('The describe process ended with an error');
-        }
+        expect($process->getExitCode())->toBe(0);
     }
 
     /**
@@ -40,8 +40,8 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
         $command = sprintf('%s %s', $this->buildPhpSpecCmd(), 'run');
         $env = array(
             'SHELL_INTERACTIVE' => true,
-            'HOME' => getenv('HOME'),
-            'PATH' => getenv('PATH'),
+            'HOME' => $_SERVER['HOME'],
+            'PATH' => $_SERVER['PATH']
         );
 
         $this->process = $process = new Process($command);
@@ -56,13 +56,7 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
      */
     protected function buildPhpSpecCmd()
     {
-        $isWindows = DIRECTORY_SEPARATOR === '\\';
-        $cmd = escapeshellcmd('' . __DIR__ . '/../../bin/phpspec');
-        if ($isWindows) {
-            $cmd = 'php ' . $cmd;
-        }
-
-        return $cmd;
+        return escapeshellcmd(__DIR__ . '/../../bin/phpspec');
     }
 
     /**
@@ -70,9 +64,7 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
      */
     public function theTestsShouldBeRerun()
     {
-        if (substr_count($this->process->getOutput(), 'specs') !== 2) {
-            throw new \Exception('The tests were not rerun');
-        }
+        expect(substr_count($this->process->getOutput(), 'specs'))->toBe(2);
     }
 
     /**
@@ -80,9 +72,7 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSeeAnErrorAboutTheMissingAutoloader()
     {
-        if (!preg_match('/autoload/', $this->process->getErrorOutput().$this->process->getOutput())) {
-            throw new \Exception('There was no error regarding a missing autoloader:');
-        }
+        expect($this->process->getErrorOutput())->toMatch('/autoload/');
     }
 
     /**
@@ -106,7 +96,20 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
             $this->buildPhpSpecCmd() . " --format=$formatter run"
         );
         $process->run();
-        $this->lastOutput = $process->getErrorOutput().$process->getOutput();
+        $this->lastOutput = $process->getErrorOutput();
+
+    }
+
+    /**
+     * @When I run phpspec on HHVM with the :formatter formatter
+     */
+    public function iRunPhpspecOnHhvmWithThe($formatter)
+    {
+        $process = new Process(
+            $this->buildPhpSpecCmd() . " --format=$formatter run"
+        );
+        $process->run();
+        $this->lastOutput = $process->getOutput();
 
     }
 
@@ -115,9 +118,7 @@ class IsolatedProcessContext implements Context, SnippetAcceptingContext
      */
     public function iShouldSee($message)
     {
-        if (strpos($this->lastOutput, $message) === false) {
-            throw new \Exception("Missing message: $message");
-        }
+        expect(strpos($this->lastOutput, $message))->toNotBe(false);
     }
 
 }

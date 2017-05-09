@@ -11,7 +11,6 @@
 
 namespace Symfony\Component\HttpKernel\Tests\Fragment;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpKernel\Controller\ControllerReference;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Symfony\Component\HttpKernel\Fragment\InlineFragmentRenderer;
@@ -20,7 +19,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 
-class InlineFragmentRendererTest extends TestCase
+class InlineFragmentRendererTest extends \PHPUnit_Framework_TestCase
 {
     public function testRender()
     {
@@ -52,7 +51,7 @@ class InlineFragmentRendererTest extends TestCase
 
     public function testRenderWithObjectsAsAttributesPassedAsObjectsInTheController()
     {
-        $resolver = $this->getMockBuilder('Symfony\\Component\\HttpKernel\\Controller\\ControllerResolver')->setMethods(array('getController'))->getMock();
+        $resolver = $this->getMock('Symfony\\Component\\HttpKernel\\Controller\\ControllerResolver', array('getController'));
         $resolver
             ->expects($this->once())
             ->method('getController')
@@ -85,7 +84,7 @@ class InlineFragmentRendererTest extends TestCase
      */
     public function testRenderExceptionNoIgnoreErrors()
     {
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
         $dispatcher->expects($this->never())->method('dispatch');
 
         $strategy = new InlineFragmentRenderer($this->getKernel($this->throwException(new \RuntimeException('foo'))), $dispatcher);
@@ -95,7 +94,7 @@ class InlineFragmentRendererTest extends TestCase
 
     public function testRenderExceptionIgnoreErrors()
     {
-        $dispatcher = $this->getMockBuilder('Symfony\Component\EventDispatcher\EventDispatcherInterface')->getMock();
+        $dispatcher = $this->getMock('Symfony\Component\EventDispatcher\EventDispatcherInterface');
         $dispatcher->expects($this->once())->method('dispatch')->with(KernelEvents::EXCEPTION);
 
         $strategy = new InlineFragmentRenderer($this->getKernel($this->throwException(new \RuntimeException('foo'))), $dispatcher);
@@ -115,7 +114,7 @@ class InlineFragmentRendererTest extends TestCase
 
     private function getKernel($returnValue)
     {
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMock('Symfony\Component\HttpKernel\HttpKernelInterface');
         $kernel
             ->expects($this->any())
             ->method('handle')
@@ -131,7 +130,7 @@ class InlineFragmentRendererTest extends TestCase
      */
     private function getKernelExpectingRequest(Request $request)
     {
-        $kernel = $this->getMockBuilder('Symfony\Component\HttpKernel\HttpKernelInterface')->getMock();
+        $kernel = $this->getMock('Symfony\Component\HttpKernel\HttpKernelInterface');
         $kernel
             ->expects($this->any())
             ->method('handle')
@@ -143,7 +142,7 @@ class InlineFragmentRendererTest extends TestCase
 
     public function testExceptionInSubRequestsDoesNotMangleOutputBuffers()
     {
-        $resolver = $this->getMockBuilder('Symfony\\Component\\HttpKernel\\Controller\\ControllerResolverInterface')->getMock();
+        $resolver = $this->getMock('Symfony\\Component\\HttpKernel\\Controller\\ControllerResolverInterface');
         $resolver
             ->expects($this->once())
             ->method('getController')
@@ -197,19 +196,6 @@ class InlineFragmentRendererTest extends TestCase
         $this->testESIHeaderIsKeptInSubrequest();
 
         Request::setTrustedHeaderName(Request::HEADER_CLIENT_IP, $trustedHeaderName);
-    }
-
-    public function testHeadersPossiblyResultingIn304AreNotAssignedToSubrequest()
-    {
-        $expectedSubRequest = Request::create('/');
-        if (Request::getTrustedHeaderName(Request::HEADER_CLIENT_IP)) {
-            $expectedSubRequest->headers->set('x-forwarded-for', array('127.0.0.1'));
-            $expectedSubRequest->server->set('HTTP_X_FORWARDED_FOR', '127.0.0.1');
-        }
-
-        $strategy = new InlineFragmentRenderer($this->getKernelExpectingRequest($expectedSubRequest));
-        $request = Request::create('/', 'GET', array(), array(), array(), array('HTTP_IF_MODIFIED_SINCE' => 'Fri, 01 Jan 2016 00:00:00 GMT', 'HTTP_IF_NONE_MATCH' => '*'));
-        $strategy->render('/', $request);
     }
 }
 

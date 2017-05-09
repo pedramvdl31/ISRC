@@ -26,6 +26,7 @@ use App\Category;
 use App\Search;
 use App\Inventory;
 use App\Page;
+use App\News;
 use App\Menu;
 use App\Layout;
 use App\Invoice;
@@ -38,7 +39,7 @@ use Symfony\Component\HttpFoundation\StreamedResponse;
 class HomeController extends Controller
 {
     public function __construct() {
-        $this->layout = "layouts.index-layouts.index";
+        $this->layout = "layouts.admins";
         //CHECK IF THE HOMEPAGE IS SET
     }
 
@@ -68,25 +69,14 @@ class HomeController extends Controller
      *
      * @return Response
      */
+
     public function getHomePage(){
-
-
         $user = '';
-
-        // Mail::send('emails.reminder', ['user' => $user], function ($m) use ($user) {
-        //     $m->from('hello@app.com', 'Your Application');
-
-        //     $m->to('pedramkhoshnevis@gmail.com', 'pedram')->subject('Your Reminder!');
-        // });
-
+        $all_news = News::PrepareNewsForHomepage((News::all()));
         return view('index')
-        ->with('layout','layouts.master');
+        ->with('layout','layouts.master')
+        ->with('all_news', $all_news);
     }
-
-
-
-
-
         public function postPurchaceRequest()
     {
         if(Request::ajax()){
@@ -168,4 +158,96 @@ class HomeController extends Controller
                 ));
         }
     }
+    public function getNewsIndex()
+    {
+        $pages = Page::PreparepagesForIndex(News::all());
+        return view('news.index')
+        ->with('layout',$this->layout)
+        ->with('pages',$pages);
+    }
+
+    public function getNewsAdd()
+    {
+        return view('news.add')
+        ->with('layout',$this->layout);
+    }  
+
+    public function postNewsAdd()
+    {   
+
+        $contents = Input::get('content');
+        $new_content = str_replace('../..', "", $contents);
+
+        $pages = new News();
+        $pages->title = Input::get('title');
+        $pages->description = Input::get('description');
+        $pages->section_content = $new_content;
+        $pages->status = 1;
+        if ($pages->save()) {
+            Flash::success('Successfully Saved');
+            return Redirect::route('news_index');
+        }
+
+    }  
+
+    public function getNewsEdit($id = null)
+    {
+        if (isset($id)) {
+            $page = News::find($id);
+            if (isset($page)) {
+                $data = [];
+                $data['id'] = $page->id;
+                $data['page_title'] = $page->title;
+                $data['description'] = $page->description;
+                $data['page_section_content'] = $page->section_content;
+                return view('news.edit')
+                    ->with('page_data',$data)//ignore the wrong name
+                    ->with('layout',$this->layout);
+
+            }
+        }
+    } 
+
+
+    public function postNewsEdit()
+    {
+        $page_id = Input::get('page_id');
+        if (isset($page_id)) {
+            $pages = News::find($page_id);
+            if (isset($pages)) {
+                $contents = Input::get('content');
+                $new_content = str_replace('../../..', "", $contents);
+                $pages->title = Input::get('title');
+                $pages->description = Input::get('description');
+                $pages->section_content = $new_content;
+                $pages->status = 1;
+                if ($pages->save()) {
+                    Flash::success('Successfully Saved');
+                    return Redirect::route('news_index');
+                }
+            }
+            Flash::success('Error');
+            return Redirect::route('news_index');
+        }
+    }  
+
+    public function getNewsRemove($id = null)
+    {
+        $error = 1;
+        if (isset($id)) {
+            $page = News::find($id);
+            if (isset($page)) {
+                if ($page->delete()) {
+                    $error = 0;
+                    Flash::success('Successfully Removed');
+                    return Redirect::route('news_index');
+                }
+            }
+        }
+        if ($error == 1) {
+            Flash::success('Error');
+            return Redirect::route('news_index');
+        }
+    }
+
 }

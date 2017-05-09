@@ -30,26 +30,22 @@
                         <!-- Wrapper for slides -->
                         <div class="carousel-inner" role="listbox">
                             <div class="item active">
-                                <img src="/assets/images/hero1.jpg" alt="Scanned-model">
+                                <img src="/assets/images/sx1.jpg" alt="Scanned-model">
                                 <div class="carousel-caption">
-                                    <h3 class="bwcar">High Precision Scanning</h3>
-                                    <p class="bwcar">Scanned images combined in 360° can be exported to all common 3D formats</p>
+                                    <div class="ccap-wrapper">
+                                        <h3>High Precision Scanning</h3>
+                                        <p>Scanned images combined in 360° can be exported to all common 3D formats</p>       
+                                    </div>
+ 
                                 </div>
                             </div>
-
                             <div class="item">
-                                <img src="/assets/images/hero2.jpg" alt="Scanned-model">
+                                <img src="/assets/images/sx2.jpg" alt="Scanned-model">
                                 <div class="carousel-caption">
-                                    <h3>Structured Light</h3>
-                                    <p>High-precision. High-speed.</p>
-                                </div>
-                            </div>
-
-                            <div class="item">
-                                <img src="/assets/images/hero3.jpg" alt="Alligator">
-                                <div class="carousel-caption">
-                                    <h3 class="bwcar">Alligator</h3>
-                                    <p class="bwcar">Structured Light Based 3D Camera Light Weight, Compact, and Accurate 3D Camera. Output result can be exported to common 3D formats (OBJ, STL, PLY)</p>
+                                    <div class="ccap-wrapper">
+                                        <h3>Structured Light</h3>
+                                        <p>High-precision. High-speed.</p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -91,12 +87,23 @@
                 <h3 class="wow fadeInUp">- INGVISION</h3>
             </div>
         </div>
+        <span id="features"></span>
     </div>
-
-    <div id="features" class="features">
+    <div class="features">
         <div class="container">
             <div class="features-inner">
                 <div class="row">
+                    <div class="col-md-6">
+                        <div class="features-list">
+                            <h1 class="wow fadeInUp">Features & Specifications</h1>
+                            <ul class="wow fadeInUp">
+                                <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
+                                <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
+                                <li>The Boundary Inheritance Codec is developed for robustly estimating the correspondences between projector and camera, to make accurate triangulation for 3D point cloud. </li>
+                                <li>Auto-exposure control technique is applied to help the camera captures objects in different lighting condition. </li>
+                            </ul>
+                        </div>
+                    </div>
                     <div class="col-md-6">
                         <table class="table table-condensed" style="text-align: center;">
                             <thead>
@@ -154,28 +161,31 @@
                                     <td>IEEE 1394b, VGA</td>
                                 </tr>
                             </tbody>
+
                         </table>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="features-list">
-                            <h1 class="wow fadeInUp">Features & Specifications</h1>
-                            <ul class="wow fadeInUp">
-                                <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
-                                <li>The accurate pattern boundary estimation technique allows correctly locating the boundary of the light pattern on surface even when it is distorted by variation in surface reflectance.</li>
-                                <li>The Boundary Inheritance Codec is developed for robustly estimating the correspondences between projector and camera, to make accurate triangulation for 3D point cloud. </li>
-                                <li>Auto-exposure control technique is applied to help the camera captures objects in different lighting condition. </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
             </div>
+
         </div>
+        <span id="videosec"></span>
     </div>
 
 
-    <div class="feature-sub" id="videosec">
+    <div class="feature-sub" >
         <div class="container vcont" style="">
             <div class="sub-innerx" style="">
+                <div class="col-md-6" style="">
+                    <div class="features-list">
+                        <h1 id="_x1" style="" class="wow fadeInUp" data-wow-delay="0.1s">High Speed IR 3D Camera</h1>
+                        <ul id="_x2" style="" class="wow fadeInUp" data-wow-delay="0.1s">
+                            <li>Accurate boundary estimation</li>
+                            <li>Boundary inheritance from upper layer to lower layer</li>
+                            <li>Region based inheritance for correspondence</li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="col-md-6 vcont">
                     <div class="features-list">
                         <div class="da-img">
@@ -183,148 +193,42 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" style="padding-left: 30px;padding-right: 30px;padding-top: 30px;">
-                    <div class="features-list">
-                        <h1 style="font-size: 36px;color: #FFFFFF;
-            font-weight: 400;
-            line-height: 1.2;
-            margin-top: 10px;
-            margin-bottom: 0;" class="wow fadeInUp" data-wow-delay="0.1s">High Speed IR 3D Camera</h1>
-                        <ul style="font-family: Poppins;
-            font-size: 14px;
-            color: #FFFFFF;
-            font-weight: 300;
-            line-height: 1.4;
-            margin-top: 20px;
-            margin-bottom: 40px;" class="wow fadeInUp" data-wow-delay="0.1s">
-                            <li>Accurate boundary estimation</li>
-                            <li>Boundary inheritance from upper layer to lower layer</li>
-                            <li>Region based inheritance for correspondence</li>
-                        </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="review-section" class="review-sectionx">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 col-md-offset-1">
+                <h1 class="wow fadeInUp" data-wow-delay="0">News and Articles</h1>
+                    <div id="media-wrapper">
+                        @foreach ($all_news as $all_new)
+                            <div class="media"> 
+                                <div class="media-body"> 
+                                    <div class="row">
+                                        <h4 style="float: left;" class="media-heading html-title-{{$all_new['id']}}">{{$all_new['title']}}</h4>
+                                        <span style="float: right;" class="label label-default">{{$all_new['created_at_html']}}</span>
+                                    </div> 
+                                    <p>{{$all_new['description']}}&nbsp;&nbsp;<span data-id="{{$all_new['id']}}" class="label label-primary rdmore">Read More</span></p> 
+                                </div>
+                                <span class="html-content hide html-content-{{$all_new['id']}}">{!!$all_new['section_content']!!}</span>
+                            </div> 
+                        @endforeach
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-<!-- 
-    <div id="review-section" class="review-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                    <div class="reviews owl-carousel owl-theme">
-                        <div class="review-single"><img class="img-circle" src="/assets/images/icon.png" alt="Client Testimonoal" />
-                            <div class="review-text wow fadeInDown" data-wow-delay="0.1s">
-                                <p>But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system</p>
-                                <h3>- enjoy a pleasure</h3>
-                                <h3>Vice President complete Inc</h3>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                            </div>
-                        </div>
-                        <div class="review-single"><img class="img-circle" src="/assets/images/icon.png" alt="Client Testimonoal" />
-                            <div class="review-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer iaculis quis tellus ac vestibulum. Etiam fermentum nisl ac venenatis rhoncus.</p>
-                                <h3>- Kate Abbot</h3>
-                                <h3>President Proton LLC</h3>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-ios-star-half"></i>
-                            </div>
-                        </div>
-                        <div class="review-single"><img class="img-circle" src="/assets/images/icon.png" alt="Client Testimonoal" />
-                            <div class="review-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer iaculis quis tellus ac vestibulum. Etiam fermentum nisl ac venenatis rhoncus.</p>
-                                <h3>- Alice</h3>
-                                <h3>CEO Marga Holdings</h3>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-ios-star-half"></i>
-                            </div>
-                        </div>
-                        <div class="review-single"><img class="img-circle" src="/assets/images/icon.png" alt="Client Testimonoal" />
-                            <div class="review-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer iaculis quis tellus ac vestibulum. Etiam fermentum nisl ac venenatis rhoncus.</p>
-                                <h3>- Robert Hammer</h3>
-                                <h3>Chairman Hammer Corp</h3>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                            </div>
-                        </div>
-                        <div class="review-single"><img class="img-circle" src="/assets/images/icon.png" alt="Client Testimonoal" />
-                            <div class="review-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer iaculis quis tellus ac vestibulum. Etiam fermentum nisl ac venenatis rhoncus.</p>
-                                <h3>- Rita Valentine</h3>
-                                <h3>Primal Inc</h3>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-star"></i>
-                                <i class="ion ion-ios-star-half"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
-
-    <style type="text/css">
-        input[type="text"]:focus,
-        textarea:focus,
-        textarea.form-control:focus {
-            outline: 0;
-            background: #FFFFFF;
-            border: none !important;
-            -moz-box-shadow: none;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-        input[type="email"]:focus,
-        textarea:focus,
-        textarea.form-control:focus {
-            outline: 0;
-            background: #FFFFFF;
-            border: none !important;
-            -moz-box-shadow: none;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-        }
-        .subscribe-form .name {
-            margin-bottom: 3px;
-            background-color: #F9F9F9;
-            border: none;
-            border-radius: 5px;
-            outline: none;
-            height: 40px;
-            box-shadow: none;
-            -webkit-box-sizing: content-box;
-            -moz-box-sizing: content-box;
-            box-sizing: content-box;
-            transition: all .3s;
-        }
-        .form .subscribe-form .submit-button2 {
-            border-radius: 5px !important;
-        }
-    </style>
-
     <div id="purchase" class="pricing">
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="pricing-content">
-                        <h1 class="wow fadeInUp" data-wow-delay="0.1s">Product Inquiry</h1>
-                        <div class="form wow fadeInUp" data-wow-delay="0.15s">
+                        <h1 class="wow fadeInUp" data-wow-delay="0">Product Inquiry</h1>
+                        <div class="form wow fadeInUp" data-wow-delay="0">
                             <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
                                 <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="name" placeholder="Name*" autocomplete="off">
                                 <input class="name col-md-11 col-sm-12 col-xs-12" type="text" name="organization" placeholder="Organization" autocomplete="off">
@@ -338,7 +242,7 @@
                                 </select>
                                 <textarea id="_a12" class="col-md-11 col-sm-12 col-xs-12" rows="29" style="" name="add-comment" placeholder="Additional Comment"></textarea>
                                 <div class="col-md-11 col-sm-12 col-xs-12" style="height: 100%;padding: 0 0 0 0;margin-bottom: 10px;">
-                                	<center><div class="g-recaptcha" data-sitekey="6Lf7tRwUAAAAACPakeOsQX-vemHqKPKh95YRb5IN"></div></center>
+                                	<div class="g-recaptcha" data-sitekey="6Lf7tRwUAAAAACPakeOsQX-vemHqKPKh95YRb5IN"></div>
                                 </div>
 
                                 <input id="pbtn" class="submit-button submit-button2" type="submit" value="Purchace Request">
@@ -348,8 +252,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-<!--                     <img class="img-responsive wow fadeIn" src="/assets/images/pricing.jpg" alt="Image Pricing" /> -->
+                <div class="col-md-6" style="padding: 60px 0 0 0;">
+                    <img class="img-responsive wow fadeIn" src="/assets/images/xf4.jpg" alt="Image Pricing" />
                 </div>
             </div>
         </div>
@@ -361,10 +265,10 @@
         <div class="container">
             <div class="cta-inner">
                 <h1 class="wow fadeInUp" data-wow-delay="0s">Love offers and discounts? Subscribe and save.</h1>
-                <p class="wow fadeInUp" data-wow-delay="0.1s">
+                <p class="wow fadeInUp" data-wow-delay="0">
                     Just enter your email address and we'll take care of the rest.
                 </p>
-                <div class="form wow fadeInUp" data-wow-delay="0.15s">
+                <div class="form wow fadeInUp" data-wow-delay="0">
                     <form class="subscribe-form wow zoomIn" action="/assets/php/subscribe.php" method="post" accept-charset="UTF-8" enctype="application/x-www-form-urlencoded" autocomplete="off" novalidate>
                         <input class="mail" type="email" name="email" placeholder="Join the wait list" autocomplete="off">
                         <input class="submit-button" type="submit" value="Subscribe">

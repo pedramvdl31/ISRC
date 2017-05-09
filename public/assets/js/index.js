@@ -20,35 +20,15 @@ main = {
 		    e.preventDefault();
 		    var postdata = $('.subscribe-form').serialize();
 			requestw.send_email_purchace(postdata);
-		    // $.ajax({
-		    //     type: 'POST',
-		    //     url: 'assets/php/subscribe.php',
-		    //     data: postdata,
-		    //     dataType: 'json',
-		    //     success: function(json) {
-		    //     if(json.valid == 0) {
-		    //         $('.success-message').hide();
-		    //         $('.error-message').hide();
-		    //         $('.error-message').html(json.message);
-		    //         $('.error-message').fadeIn('fast', function(){
-		    //             $('.subscribe-form').addClass('animated flash').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-		    //             $(this).removeClass('animated flash');
-		    //           });
-		    //       });
-		    //     }
-		    //     else {
-		    //         $('.error-message').hide();
-		    //         $('.success-message').hide();
-		    //         $('.subscribe-form').hide();
-		    //         $('.success-message').html(json.message);
-		    //         $('.success-message').fadeIn('fast', function(){
-		    //         $('.top-content').backstretch("resize");
-		    //       });
-		    //     }
-		    //   }
-		    // });
 		  });
-
+		
+	    $('.rdmore').on('click', function () {
+	    	var this_data_id = $(this).attr('data-id');
+	    	var this_title = $('.html-title-'+this_data_id).text();
+	    	$('.newsmodal-title').text(this_title);
+	    	$('.newsmodal-body').html($('.html-content-'+this_data_id).html());
+	    	$('#newsmodal').modal('show');
+	    });
 
 	}
 }

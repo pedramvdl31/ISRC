@@ -22,8 +22,6 @@ use Symfony\Component\CssSelector\XPath\XPathExpr;
  * which is copyright Ian Bicking, @see https://github.com/SimonSapin/cssselect.
  *
  * @author Jean-François Simon <jeanfrancois.simon@sensiolabs.com>
- *
- * @internal
  */
 class NodeExtension extends AbstractExtension
 {
@@ -50,7 +48,7 @@ class NodeExtension extends AbstractExtension
      * @param int  $flag
      * @param bool $on
      *
-     * @return $this
+     * @return NodeExtension
      */
     public function setFlag($flag, $on)
     {

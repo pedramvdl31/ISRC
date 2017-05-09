@@ -83,8 +83,6 @@ abstract class HasOneOrMany extends Relation
 
         $query->from($query->getModel()->getTable().' as '.$hash = $this->getRelationCountHash());
 
-        $query->getModel()->setTable($hash);
-
         $key = $this->wrap($this->getQualifiedParentKeyName());
 
         return $query->where($hash.'.'.$this->getPlainForeignKey(), '=', new Expression($key));
@@ -207,7 +205,7 @@ abstract class HasOneOrMany extends Relation
      * Attach a model instance to the parent model.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
-     * @return \Illuminate\Database\Eloquent\Model|false
+     * @return \Illuminate\Database\Eloquent\Model
      */
     public function save(Model $model)
     {

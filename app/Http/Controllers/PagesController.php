@@ -63,20 +63,7 @@ class PagesController extends Controller
         ->with('layout',$this->layout)
         ->with('pages',$pages);
     }
-    public function getProf()
-    {
-        return view('pages.prof')
-            ->with('layout','layouts.admins');
-    } 
-    public function getStud()
-    {
-        return view('pages.stud')
-            ->with('layout','layouts.admins');
-    } 
 
-    public function postAddPreviewStep2()
-    {
-    }
     public function getAdd()
     {
 
@@ -126,6 +113,8 @@ class PagesController extends Controller
                         ->with('page_data',$data)//ignore the wrong name
                         ->with('layout',$this->layout);
                 }
+
+
             }
         }
     } 
@@ -180,6 +169,8 @@ class PagesController extends Controller
             return Redirect::route('pages_index');
         }
     }
+
+
 
     public function getPage($param1 = null, $param2 = null)
     {

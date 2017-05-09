@@ -565,7 +565,7 @@ class Request extends SymfonyRequest implements ArrayAccess
             return $this->json();
         }
 
-        return $this->getRealMethod() == 'GET' ? $this->query : $this->request;
+        return $this->getMethod() == 'GET' ? $this->query : $this->request;
     }
 
     /**
@@ -583,7 +583,11 @@ class Request extends SymfonyRequest implements ArrayAccess
 
         $split = explode('/', $actual);
 
-        return isset($split[1]) && preg_match('#'.preg_quote($split[0], '#').'/.+\+'.preg_quote($split[1], '#').'#', $type);
+        if (isset($split[1]) && preg_match('/'.$split[0].'\/.+\+'.$split[1].'/', $type)) {
+            return true;
+        }
+
+        return false;
     }
 
     /**

@@ -1263,7 +1263,7 @@ input[type="email"]::-webkit-input-placeholder,input[type="text"]::-webkit-input
 }
 
 .features .features-list {
-	padding: 20px 0 0 0;
+	/*padding: 20px 0 0 0;*/
 	text-align: center;
 }
 
@@ -2095,7 +2095,7 @@ input[type="email"]::-webkit-input-placeholder,input[type="text"]::-webkit-input
 	}
 
 	.features .features-list {
-		padding: 100px 0 0 0;
+		/*padding: 100px 0 0 0;*/
 		text-align: left;
 	}
 
@@ -2187,7 +2187,7 @@ input[type="email"]::-webkit-input-placeholder,input[type="text"]::-webkit-input
 
 @media only screen and (min-width: 767px) and (max-width: 1024px) {
 	.features .features-list {
-		padding: 50px 0 0 0;
+		/*padding: 50px 0 0 0;*/
 	}
 
 	.split-content {

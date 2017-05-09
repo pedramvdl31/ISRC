@@ -51,7 +51,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-NX45XJ');</script>
 <!-- End Google Tag Manager -->
 <body class="nav-md">
-
     <div class="container body">
 
         <div class="main_container">
@@ -87,32 +86,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
                         <div class="menu_section">
                             <ul class="nav side-menu">
-<!--                                 <li class="li-menus first-li-m"><a class="first-li-a"><i class="fa fa-edit"></i> Access Control List <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li class="navLi"><a href="{!! route('roles_index') !!}">Roles</a>
-                                        </li>
-                                        <li class="navLi"><a href="{!! route('permissions_index') !!}">Permissions</a>
-                                        </li>
-                                        <li class="navLi"><a href="{!! route('permission_roles_index') !!}">Permision Roles</a>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="li-menus"><a><i class="fa fa-wrench"></i> Control Panel <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li class="navLi"><a href="{!! route('users_index') !!}">Users</a>
-                                        </li>
-                                    </ul>
-                                </li> -->
-                                <li class="li-menus first-li-m"><a class="first-li-a"><i class="fa fa-cog"></i> Settings <span class="fa fa-chevron-down"></span></a>
+<!--                                 <li class="li-menus first-li-m"><a class="first-li-a"><i class="fa fa-cog"></i> Settings <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li>Website</li>
                                         <li class="navLi"><a href="{!! route('web_mode') !!}">Mode</a>
                                         </li>
 
                                     </ul>
+                                </li> -->
+                                <li class="li-menus first-li-m"><a class="first-li-a"><i class="fa fa-cog"></i> News <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu" style="display: none">
+                                        <li class="navLi"><a href="{!! route('news_index') !!}">Index</a>
+                                        </li>
+                                        <li class="navLi"><a href="{!! route('news_add') !!}">Add</a>
+                                        </li>
+
+                                    </ul>
                                 </li>
-                                <li class="li-menus"><a class=""><i class="fa fa-clone"></i> Pages <span class="fa fa-chevron-down"></span></a>
+
+<!--                                 <li class="li-menus"><a class=""><i class="fa fa-clone"></i> Pages <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li>Pages</li>
                                         <li class="navLi"><a href="{!! route('pages_index') !!}">Index</a>
@@ -126,21 +118,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         </li>
                                     </ul>
                                 </li>
-<!--                                 <li class="li-menus"><a><i class="fa fa-cogs"></i> Website Setting <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li>Website Brand</li>
-                                            <li class="navLi"><a href="{!! route('website_brand_index') !!}">Setup</a>
-                                            </li>
-                                    </ul>
-                                </li>   -->
-                                <li class="li-menus"><a><i class="fa fa-calendar"></i> Events <span class="fa fa-chevron-down"></span></a>
-                                    <ul class="nav child_menu" style="display: none">
-                                        <li class="navLi"><a href="{!! route('events_index') !!}">View All</a>
-                                        </li>
-                                        <li class="navLi"><a href="{!! route('events_add') !!}">Add New</a>
-                                        </li>
-                                    </ul>
-                                </li>
+
                                 <li class="li-menus"><a><i class="fa fa-object-group"></i> Menus <span class="fa fa-chevron-down"></span></a>
                                     <ul class="nav child_menu" style="display: none">
                                         <li class="navLi"><a href="{!! route('menus_index') !!}">View All</a>
@@ -159,7 +137,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
                                         <li class="navLi"><a href="{!! route('slogans_add') !!}">Add New</a>
                                         </li>
                                     </ul>
-                                </li>
+                                </li> -->
 
   
                             </ul>

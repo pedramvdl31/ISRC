@@ -11,14 +11,13 @@
 
 namespace Symfony\Component\Console\Tests\Helper;
 
-use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Helper\TableHelper;
 use Symfony\Component\Console\Output\StreamOutput;
 
 /**
  * @group legacy
  */
-class LegacyTableHelperTest extends TestCase
+class LegacyTableHelperTest extends \PHPUnit_Framework_TestCase
 {
     protected $stream;
 
@@ -113,7 +112,7 @@ TABLE
                 array('ISBN', 'Title', 'Author'),
                 $books,
                 TableHelper::LAYOUT_COMPACT,
-<<<'TABLE'
+<<<TABLE
  ISBN          Title                    Author           
  99921-58-10-7 Divine Comedy            Dante Alighieri  
  9971-5-0210-0 A Tale of Two Cities     Charles Dickens  
@@ -126,7 +125,7 @@ TABLE
                 array('ISBN', 'Title', 'Author'),
                 $books,
                 TableHelper::LAYOUT_BORDERLESS,
-<<<'TABLE'
+<<<TABLE
  =============== ========================== ================== 
   ISBN            Title                      Author            
  =============== ========================== ================== 

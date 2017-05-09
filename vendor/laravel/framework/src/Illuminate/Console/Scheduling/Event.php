@@ -217,16 +217,12 @@ class Event
         $redirect = $this->shouldAppendOutput ? ' >> ' : ' > ';
 
         if ($this->withoutOverlapping) {
-            if (windows_os()) {
-                $command = '(echo \'\' > "'.$this->mutexPath().'" & '.$this->command.' & del "'.$this->mutexPath().'")'.$redirect.$output.' 2>&1 &';
-            } else {
-                $command = '(touch '.$this->mutexPath().'; '.$this->command.'; rm '.$this->mutexPath().')'.$redirect.$output.' 2>&1 &';
-            }
+            $command = '(touch '.$this->mutexPath().'; '.$this->command.'; rm '.$this->mutexPath().')'.$redirect.$output.' 2>&1 &';
         } else {
             $command = $this->command.$redirect.$output.' 2>&1 &';
         }
 
-        return $this->user && ! windows_os() ? 'sudo -u '.$this->user.' -- sh -c \''.$command.'\'' : $command;
+        return $this->user ? 'sudo -u '.$this->user.' '.$command : $command;
     }
 
     /**
