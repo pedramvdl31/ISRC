@@ -3,7 +3,7 @@
 /.vagrant/*
 Homestead.yaml
 Homestead.json
-
+.env
 /public/assets/images/inventories
 /public/assets/images/pages
 
